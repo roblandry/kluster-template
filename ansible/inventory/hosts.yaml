@@ -1,0 +1,16 @@
+---
+kubernetes:
+  children:
+    controllers:
+      hosts:
+        "kontrol-1":
+          ansible_user: "rob"
+          ansible_host: "10.0.5.1"
+    workers:
+      hosts:
+        "worker-1":
+          ansible_user: "rob"
+          ansible_host: "10.0.5.2"
+        "worker-2":
+          ansible_user: "rob"
+          ansible_host: "10.0.5.3"
