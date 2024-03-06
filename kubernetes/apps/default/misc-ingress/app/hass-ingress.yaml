@@ -11,7 +11,7 @@ metadata:
   #   gethomepage.dev/widget.type: hass
   #   gethomepage.dev/widget.url: http://${HASS_IP}:8265
 spec:
-  ingressClassName: internal
+  ingressClassName: external
   rules:
     - host: &host hass.${SECRET_DOMAIN}
       http:
