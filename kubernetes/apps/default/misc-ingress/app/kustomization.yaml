@@ -3,20 +3,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./ingress-external-ai.yaml  # untested
-  - ./ingress-external-docs.yaml  # untested
-  - ./ingress-external-food.yaml  # untested
+  - ./ingress-external-ai.yaml
+  - ./ingress-external-docs.yaml
+  - ./ingress-external-food.yaml
   - ./ingress-external-hass.yaml
-  - ./ingress-external-photos.yaml  # untested
+  - ./ingress-external-photos.yaml  # trusted proxy issue
   - ./ingress-external-search.yaml
-  - ./ingress-external-ssl-cloud.yaml  # untested
-  - ./ingress-external-ssl-pass.yaml  # untested
-  - ./ingress-external-ssl-www.yaml  # untested
-  - ./ingress-internal-apc.yaml  # not working
+  - ./ingress-external-ssl-cloud.yaml  # The plain HTTP request was sent to HTTPS port
+  - ./ingress-external-ssl-pass.yaml
+  - ./ingress-external-ssl-www.yaml  # The plain HTTP request was sent to HTTPS port
+  - ./ingress-internal-apc.yaml
   - ./ingress-internal-kvm2.yaml
   - ./ingress-internal-log.yaml  # bad gateway
   - ./ingress-internal-ssl-ap1.yaml
-  - ./ingress-internal-ssl-kvm1.yaml  # bad gateway
+  - ./ingress-internal-ssl-kvm1.yaml
   - ./ingress-internal-ssl-pve.yaml
   - ./ingress-internal-ssl-router.yaml
   - ./ingress-internal-ssl-unraid.yaml
