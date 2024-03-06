@@ -2,22 +2,22 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hass
+  name: ap1
   annotations:
-    external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    internal-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"
 spec:
-  ingressClassName: external
+  ingressClassName: internal
   rules:
-    - host: &host "hass.${SECRET_DOMAIN}"
+    - host: &host "ap1.${SECRET_DOMAIN}"
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: hass
+                name: ap1
                 port:
-                  number: 8123
+                  number: 8443
   tls:
     - hosts:
         - *host
@@ -25,21 +25,21 @@ spec:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: hass
+  name: ap1
 subsets:
   - addresses:
-      - ip: "${SECRET_HASS_IP}"
+      - ip: "${SECRET_AP1_IP}"
     ports:
-      - name: http
-        port: 8123
+      - name: https
+        port: 8443
         protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: hass
+  name: ap1
 spec:
   ports:
-    - name: http
-      port: 8123
+    - name: https
+      port: 8443
   type: ClusterIP
