@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webtrees
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "webtrees.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webtrees
+                port:
+                  number: 8010
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: webtrees
+subsets:
+  - addresses:
+      - ip: "${SECRET_UNRAID_IP}"
+    ports:
+      - name: http
+        port: 8010
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webtrees
+spec:
+  ports:
+    - name: http
+      port: 8010
+  type: ClusterIP

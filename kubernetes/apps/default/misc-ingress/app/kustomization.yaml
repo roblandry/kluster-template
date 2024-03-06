@@ -7,17 +7,32 @@ resources:
   - ./ingress-external-docs.yaml
   - ./ingress-external-food.yaml
   - ./ingress-external-hass.yaml
-  - ./ingress-external-photos.yaml  # trusted proxy issue
+  - ./ingress-external-photos.yaml
   - ./ingress-external-search.yaml
-  - ./ingress-external-ssl-cloud.yaml  # The plain HTTP request was sent to HTTPS port
+  - ./ingress-external-ssl-cloud.yaml
   - ./ingress-external-ssl-pass.yaml
-  - ./ingress-external-ssl-www.yaml  # The plain HTTP request was sent to HTTPS port
+  - ./ingress-external-ssl-www.yaml
   - ./ingress-internal-apc.yaml
+  - ./ingress-internal-calibre_web.yaml  # untested
+  - ./ingress-internal-calibre.yaml  # untested
+  - ./ingress-internal-chat.yaml  # untested
+  - ./ingress-internal-chat2.yaml  # untested
+  - ./ingress-internal-dt.yaml  # untested
+  - ./ingress-internal-find.yaml  # untested
+  - ./ingress-internal-frigate.yaml  # untested
   - ./ingress-internal-kvm2.yaml
   - ./ingress-internal-log.yaml  # bad gateway
+  - ./ingress-internal-obi.yaml  # untested
+  - ./ingress-internal-octo.yaml  # untested
+  - ./ingress-internal-ombi.yaml  # untested
+  - ./ingress-internal-oocs.yaml  # untested
+  - ./ingress-internal-oods.yaml  # untested
+  - ./ingress-internal-photoprism.yaml  # untested
+  - ./ingress-internal-plex.yaml  # untested
   - ./ingress-internal-ssl-ap1.yaml
   - ./ingress-internal-ssl-kvm1.yaml
   - ./ingress-internal-ssl-pve.yaml
   - ./ingress-internal-ssl-router.yaml
   - ./ingress-internal-ssl-unraid.yaml
   - ./ingress-internal-switch.yaml
+  - ./ingress-internal-webtrees.yaml  # untested

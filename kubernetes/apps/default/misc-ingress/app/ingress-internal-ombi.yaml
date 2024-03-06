@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ombi
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "ombi.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: ombi
+                port:
+                  number: 3579
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: ombi
+subsets:
+  - addresses:
+      - ip: "${SECRET_UNRAID_IP}"
+    ports:
+      - name: http
+        port: 3579
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ombi
+spec:
+  ports:
+    - name: http
+      port: 3579
+  type: ClusterIP

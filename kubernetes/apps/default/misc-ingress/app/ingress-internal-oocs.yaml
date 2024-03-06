@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: oocs
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "oocs.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: oocs
+                port:
+                  number: 8076
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: oocs
+subsets:
+  - addresses:
+      - ip: "${SECRET_UNRAID_IP}"
+    ports:
+      - name: http
+        port: 8076
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oocs
+spec:
+  ports:
+    - name: http
+      port: 8076
+  type: ClusterIP

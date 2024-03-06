@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dt
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "dt.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: dt
+                port:
+                  number: 5001
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: dt
+subsets:
+  - addresses:
+      - ip: "${SECRET_UNRAID_IP}"
+    ports:
+      - name: http
+        port: 5001
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dt
+spec:
+  ports:
+    - name: http
+      port: 5001
+  type: ClusterIP
