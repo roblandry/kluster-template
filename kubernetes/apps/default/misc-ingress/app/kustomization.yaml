@@ -29,6 +29,7 @@ resources:
   - ./ingress-internal-photoprism.yaml
   - ./ingress-internal-plex.yaml
   - ./ingress-internal-ssl-ap1.yaml
+  - ./ingress-internal-ssl-apps.yaml
   - ./ingress-internal-ssl-kvm1.yaml
   - ./ingress-internal-ssl-pve.yaml
   - ./ingress-internal-ssl-router.yaml

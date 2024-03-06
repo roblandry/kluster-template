@@ -3,9 +3,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: calibre-web
-  # annotations:
-  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
-  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
 spec:
   ingressClassName: internal
   rules:

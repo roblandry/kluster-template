@@ -2,20 +2,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: obi
+  name: apps
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
 spec:
   ingressClassName: internal
   rules:
-    - host: &host "obi.${SECRET_DOMAIN}"
+    - host: &host "apps.${SECRET_DOMAIN}"
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: obi
+                name: apps
                 port:
-                  number: 3334
+                  number: 442
   tls:
     - hosts:
         - *host
@@ -23,21 +26,21 @@ spec:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: obi
+  name: apps
 subsets:
   - addresses:
       - ip: "${SECRET_UNRAID_IP}"
     ports:
-      - name: http
-        port: 3334
+      - name: https
+        port: 442
         protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: obi
+  name: apps
 spec:
   ports:
-    - name: http
-      port: 3334
+    - name: https
+      port: 442
   type: ClusterIP
