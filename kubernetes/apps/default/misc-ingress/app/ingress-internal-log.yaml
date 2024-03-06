@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "log.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: log
+                port:
+                  number: 9000
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: log
+subsets:
+  - addresses:
+      - ip: "${SECRET_LOG_IP}"
+    ports:
+      - name: http
+        port: 9000
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: log
+spec:
+  ports:
+    - name: http
+      port: 9000
+  type: ClusterIP

@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apc
+  # annotations:
+  #   nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  #   nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "apc.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apc
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: apc
+subsets:
+  - addresses:
+      - ip: "${SECRET_APC_IP}"
+    ports:
+      - name: http
+        port: 80
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apc
+spec:
+  ports:
+    - name: http
+      port: 80
+  type: ClusterIP

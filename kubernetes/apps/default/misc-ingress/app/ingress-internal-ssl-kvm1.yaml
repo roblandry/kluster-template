@@ -1,0 +1,46 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kvm1
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+spec:
+  ingressClassName: internal
+  rules:
+    - host: &host "kvm1.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kvm1
+                port:
+                  number: 443
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: kvm1
+subsets:
+  - addresses:
+      - ip: "${SECRET_KVM1_IP}"
+    ports:
+      - name: https
+        port: 443
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kvm1
+spec:
+  ports:
+    - name: https
+      port: 443
+  type: ClusterIP

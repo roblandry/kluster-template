@@ -1,0 +1,45 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: search
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+spec:
+  ingressClassName: external
+  rules:
+    - host: &host "search.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: search
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: search
+subsets:
+  - addresses:
+      - ip: "${SECRET_SEARCH_IP}"
+    ports:
+      - name: http
+        port: 8080
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: search
+spec:
+  ports:
+    - name: http
+      port: 8080
+  type: ClusterIP
