@@ -20,6 +20,36 @@ spec:
                 name: www
                 port:
                   number: 442
+    - host: &host "family.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: family
+                port:
+                  number: 442
+    - host: &host "payback.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: payback
+                port:
+                  number: 442
+    - host: &host "code.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: code
+                port:
+                  number: 442
   tls:
     - hosts:
         - *host
