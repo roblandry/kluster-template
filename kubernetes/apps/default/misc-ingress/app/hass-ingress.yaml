@@ -21,3 +21,25 @@ spec:
   tls:
     - hosts:
         - *host
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: hass
+subsets:
+  - addresses:
+      - ip: ${HASS_IP}
+    ports:
+      - name: http
+        port: 8123
+        protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hass
+spec:
+  ports:
+    - name: http
+      port: 8123
+  type: ClusterIP
