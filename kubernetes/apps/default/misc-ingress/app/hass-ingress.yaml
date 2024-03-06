@@ -28,7 +28,7 @@ metadata:
   name: hass
 subsets:
   - addresses:
-      - ip: ${HASS_IP}
+      - ip: "${HASS_IP}"
     ports:
       - name: http
         port: 8123
