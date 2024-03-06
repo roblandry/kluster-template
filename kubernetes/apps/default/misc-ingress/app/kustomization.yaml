@@ -13,26 +13,25 @@ resources:
   - ./ingress-external-ssl-pass.yaml
   - ./ingress-external-ssl-www.yaml
   - ./ingress-internal-apc.yaml
-  - ./ingress-internal-calibre_web.yaml  # untested
-  - ./ingress-internal-calibre.yaml  # untested
-  - ./ingress-internal-chat.yaml  # untested
-  - ./ingress-internal-chat2.yaml  # untested
-  - ./ingress-internal-dt.yaml  # untested
-  - ./ingress-internal-find.yaml  # untested
-  - ./ingress-internal-frigate.yaml  # untested
+  - ./ingress-internal-calibre_web.yaml
+  - ./ingress-internal-calibre.yaml
+  - ./ingress-internal-chat.yaml
+  - ./ingress-internal-chat2.yaml
+  - ./ingress-internal-dt.yaml
+  - ./ingress-internal-find.yaml
+  - ./ingress-internal-frigate.yaml
   - ./ingress-internal-kvm2.yaml
   - ./ingress-internal-log.yaml  # bad gateway
   - ./ingress-internal-obi.yaml  # untested
   - ./ingress-internal-octo.yaml  # untested
-  - ./ingress-internal-ombi.yaml  # untested
-  - ./ingress-internal-oocs.yaml  # untested
-  - ./ingress-internal-oods.yaml  # untested
-  - ./ingress-internal-photoprism.yaml  # untested
-  - ./ingress-internal-plex.yaml  # untested
+  - ./ingress-internal-ombi.yaml
+  - ./ingress-internal-oods.yaml
+  - ./ingress-internal-photoprism.yaml
+  - ./ingress-internal-plex.yaml
   - ./ingress-internal-ssl-ap1.yaml
   - ./ingress-internal-ssl-kvm1.yaml
   - ./ingress-internal-ssl-pve.yaml
   - ./ingress-internal-ssl-router.yaml
   - ./ingress-internal-ssl-unraid.yaml
   - ./ingress-internal-switch.yaml
-  - ./ingress-internal-webtrees.yaml  # untested
+  - ./ingress-internal-tree.yaml  # untested
