@@ -27,7 +27,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: family
+                name: www
                 port:
                   number: 442
     - host: &host "payback.${SECRET_DOMAIN}"
@@ -37,7 +37,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: payback
+                name: www
                 port:
                   number: 442
     - host: &host "code.${SECRET_DOMAIN}"
@@ -47,7 +47,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: code
+                name: www
                 port:
                   number: 442
   tls:
