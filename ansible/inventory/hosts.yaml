@@ -6,6 +6,9 @@ kubernetes:
         "kontrol-1":
           ansible_user: "rob"
           ansible_host: "10.0.5.1"
+        "kontrol-2":
+          ansible_user: "rob"
+          ansible_host: "10.0.5.5"
     workers:
       hosts:
         "worker-1":
@@ -13,4 +16,4 @@ kubernetes:
           ansible_host: "10.0.5.2"
         "worker-2":
           ansible_user: "rob"
-          ansible_host: "10.0.5.3"
+          ansible_host: "10.0.5.6"
