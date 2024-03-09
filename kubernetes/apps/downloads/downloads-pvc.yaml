@@ -10,7 +10,7 @@ spec:
     - ReadWriteMany
   nfs:
     server: ${SECRET_UNRAID_IP}
-    path: ${SECRET_NFS_DATA}
+    path: ${SECRET_UNRAID_SHARE}
   mountOptions:
     - nfsvers=4.2
     - tcp
