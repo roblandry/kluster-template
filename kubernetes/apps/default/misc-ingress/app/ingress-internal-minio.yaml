@@ -3,15 +3,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: minio
-  namespace: default
 spec:
   ingressClassName: internal
   rules:
     - host: &host minio.${SECRET_DOMAIN}
       http:
         paths:
-          - pathType: Prefix
-            path: "/"
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: minio
@@ -25,10 +24,9 @@ apiVersion: v1
 kind: Endpoints
 metadata:
   name: minio
-  namespace: default
 subsets:
   - addresses:
-      - ip: ${SECRET_UNRAID_IP}
+      - ip: "${SECRET_UNRAID_IP}"
     ports:
       - name: http
         port: 9768
@@ -38,7 +36,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: minio
-  namespace: default
 spec:
   ports:
     - name: http
