@@ -2,20 +2,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: tree
+  name: minio
+  namespace: default
 spec:
   ingressClassName: internal
   rules:
-    - host: &host "tree.${SECRET_DOMAIN}"
+    - host: &host minio.${SECRET_DOMAIN}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - pathType: Prefix
+            path: "/"
             backend:
               service:
-                name: tree
+                name: minio
                 port:
-                  number: 8010
+                  number: 9768
   tls:
     - hosts:
         - *host
@@ -23,21 +24,23 @@ spec:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: tree
+  name: minio
+  namespace: default
 subsets:
   - addresses:
-      - ip: "${SECRET_UNRAID_IP}"
+      - ip: ${SECRET_UNRAID_IP}
     ports:
       - name: http
-        port: 8010
+        port: 9768
         protocol: TCP
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: tree
+  name: minio
+  namespace: default
 spec:
   ports:
     - name: http
-      port: 8010
+      port: 9768
   type: ClusterIP
