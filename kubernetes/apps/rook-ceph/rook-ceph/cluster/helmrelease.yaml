@@ -22,13 +22,11 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-  uninstall:
-    keepHistory: false
   dependsOn:
     - name: rook-ceph-operator
       namespace: rook-ceph
     - name: snapshot-controller
-      namespace: storage
+      namespace: volsync-system
   values:
     monitoring:
       enabled: true
@@ -69,7 +67,7 @@ spec:
             memory: 1Gi
         osd:
           requests:
-            cpu: 400m
+            cpu: 500m
             memory: 2Gi
           limits:
             memory: 6Gi
@@ -91,12 +89,21 @@ spec:
         deviceFilter: nvme0n1
         config:
           osdsPerDevice: "1"
+      placement:
+        mgr: &placement
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node-role.kubernetes.io/control-plane
+                      operator: Exists
+        mon: *placement
     cephBlockPools:
       - name: ceph-blockpool
         spec:
           failureDomain: host
           replicated:
-            size: 4
+            size: 3
         storageClass:
           enabled: true
           name: ceph-block
@@ -124,11 +131,11 @@ spec:
         spec:
           metadataPool:
             replicated:
-              size: 4
+              size: 3
           dataPools:
             - failureDomain: host
               replicated:
-                size: 4
+                size: 3
               name: data0
           metadataServer:
             activeCount: 1
@@ -167,12 +174,12 @@ spec:
           metadataPool:
             failureDomain: host
             replicated:
-              size: 4
+              size: 3
           dataPool:
             failureDomain: host
             erasureCoded:
               dataChunks: 2
-              codingChunks: 2
+              codingChunks: 1
           preservePoolsOnDelete: true
           gateway:
             port: 80
@@ -193,12 +200,12 @@ spec:
           reclaimPolicy: Delete
           volumeBindingMode: Immediate
           parameters:
-            region: ca-west-1
+            region: us-east-1
         ingress:
           enabled: true
           ingressClassName: internal
           host:
-            name: &host rgw.${SECRET_DOMAIN}
+            name: &host rook.${SECRET_DOMAIN}
             path: /
           tls:
             - hosts:

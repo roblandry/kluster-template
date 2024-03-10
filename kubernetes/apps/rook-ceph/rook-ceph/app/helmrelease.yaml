@@ -22,15 +22,11 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-  uninstall:
-    keepHistory: false
   dependsOn:
     - name: snapshot-controller
-      namespace: storage
+      namespace: volsync-system
   values:
     csi:
-      provisioner:
-        image: registry.k8s.io/sig-storage/csi-provisioner:v4.0.0
       cephFSKernelMountOptions: ms_mode=prefer-crc
       enableLiveness: true
       serviceMonitor:
