@@ -91,6 +91,15 @@ spec:
         deviceFilter: nvme0n1
         config:
           osdsPerDevice: "1"
+      placement:
+        mgr: &placement
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node-role.kubernetes.io/control-plane
+                      operator: Exists
+        mon: *placement
     cephBlockPools:
       - name: ceph-blockpool
         spec:
@@ -193,7 +202,7 @@ spec:
           reclaimPolicy: Delete
           volumeBindingMode: Immediate
           parameters:
-            region: ca-west-1
+            region: us-east-1
         ingress:
           enabled: true
           ingressClassName: internal
