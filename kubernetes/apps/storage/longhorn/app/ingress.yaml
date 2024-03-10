@@ -51,11 +51,10 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-  - host: &host "longhorn.${SECRET_DOMAIN}"
-    http:
+  - http:
       paths:
       - pathType: Prefix
-        path: "/"
+        path: /
         backend:
           service:
             name: longhorn-frontend
