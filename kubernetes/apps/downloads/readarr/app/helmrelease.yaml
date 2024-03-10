@@ -32,7 +32,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/onedr0p/readarr-develop
-      tag: 0.1.4.1596@sha256:b24967c6b0077a9c98e89305a266067e6548a46dd97678f8a860f4e1ca63c448
+      tag: 0.3.19.2437@sha256:b238cd6ce560e7bb90e544faeebf664a40bab03f4d22de4e6e8d47ba6aa14cdb
     env:
       TZ: "${TZ}"
       READARR__INSTANCE_NAME: Readarr
