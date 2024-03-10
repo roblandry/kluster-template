@@ -11,5 +11,5 @@ resources:
   - ./metrics-server.yaml
   - ./openebs.yaml
   - ./stakater.yaml
-  - ./longhorn.yaml
-  - ./rook-ceph.yaml
+  # - ./longhorn.yaml
+  # - ./rook-ceph.yaml
