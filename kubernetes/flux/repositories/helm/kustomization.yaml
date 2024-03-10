@@ -12,3 +12,4 @@ resources:
   - ./openebs.yaml
   - ./stakater.yaml
   - ./longhorn.yaml
+  - ./rook-ceph.yaml
