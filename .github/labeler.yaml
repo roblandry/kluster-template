@@ -15,7 +15,3 @@ area/taskfile:
   - changed-files:
       - any-glob-to-any-file: .taskfiles/**/*
       - any-glob-to-any-file: Taskfile*
-# Clusters
-cluster/main:
-  - changed-files:
-      - any-glob-to-any-file: "kubernetes/main/**/*"
