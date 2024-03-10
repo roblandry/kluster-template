@@ -49,8 +49,10 @@ metadata:
     # custom max body size for file uploading like backing image uploading
     nginx.ingress.kubernetes.io/proxy-body-size: 10000m
 spec:
+  ingressClassName: internal
   rules:
-  - http:
+  - host: &host "longhorn.${SECRET_DOMAIN}"
+    http:
       paths:
       - pathType: Prefix
         path: "/"
@@ -59,3 +61,6 @@ spec:
             name: longhorn-frontend
             port:
               number: 80
+  tls:
+    - hosts:
+        - *host
