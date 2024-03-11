@@ -25,5 +25,5 @@ wiki
 /config.yaml
 # Longhorn auth
 auth
-/kubernetes/main-onedr0p
+/kubernetes/apps/external-secrets
 /.disabled
