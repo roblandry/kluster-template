@@ -4,22 +4,10 @@ kind: Ingress
 metadata:
   name: kvm2
   annotations:
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-    nginx.ingress.kubernetes.io/server-snippets: |
-     location / {
-      proxysetheader Upgrade $httpupgrade;
-      proxyhttpversion 1.1;
-      proxysetheader X-Forwarded-Host $httphost;
-      proxysetheader X-Forwarded-Proto $scheme;
-      proxysetheader X-Forwarded-For $remoteaddr;
-      proxysetheader Host $host;
-      proxysetheader Connection "upgrade";
-      proxycachebypass $httpupgrade;
-      }
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://kvm2.${SECRET_DOMAIN}"
 spec:
   ingressClassName: internal
-  enableWebsockets: true # Setting this to true enables websocket for all paths that match /chat
   rules:
     - host: &host "kvm2.${SECRET_DOMAIN}"
       http:
