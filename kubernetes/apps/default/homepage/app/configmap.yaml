@@ -18,7 +18,7 @@ data:
             - icon: google-calendar.png
               href: 'https://calendar.google.com'
         - Outlook:
-            - icon: https://raw.githubusercontent.com/joryirving/home-ops/main/icons/outlook.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/outlook.png
               href: 'https://outlook.com'
     - Media:
         - YouTube:
@@ -28,14 +28,14 @@ data:
             - icon: spotify.png
               href: 'http://open.spotify.com'
         - Youtube Music:
-            - icon: https://raw.githubusercontent.com/joryirving/home-ops/main/icons/youtube-music.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/youtube-music.png
               href: 'https://music.youtube.com'
     - Reading:
         - Beyond:
-            - icon: https://raw.githubusercontent.com/joryirving/home-ops/main/icons/beyond.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/beyond.png
               href: 'https://forums.beyond.ca/search.php?do=getnew&contenttype=vBForum_Post'
         - Western Subaru Club:
-            - icon: https://raw.githubusercontent.com/joryirving/home-ops/main/icons/wsc.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/wsc.png
               href: 'http://westernsubaruclub.com/smf/index.php?action=unread'
         - Reddit:
             - icon: reddit.png
@@ -46,12 +46,12 @@ data:
               href: 'https://kubesearch.dev/'
         - home-ops:
             - icon: github.png
-              href: 'https://github.com/joryirving/home-ops'
+              href: 'https://github.com/roblandry/kluster-template'
   docker.yaml: ""
   kubernetes.yaml: |
     mode: cluster
   services.yaml: |
-    - Calendar:
+    # - Calendar:
         # - Calendar:
         #     widget:
         #       type: calendar
@@ -148,9 +148,9 @@ data:
     title: Dashboard
     favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
     theme: dark
-    background:
-      image: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/moon.jpg
-      opacity: 50
+    # background:
+    #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/moon.jpg
+    #   opacity: 50
     color: slate
     headerStyle: clean
     layout:
@@ -192,7 +192,7 @@ data:
     #     expanded: true
     #     memory: true
     - logo:
-        icon: https://raw.githubusercontent.com/joryirving/home-ops/main/icons/lds-transparent.png
+        icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/lds-transparent.png
     - search:
         provider: [duckduckgo, google]
         focus: false
@@ -218,11 +218,11 @@ data:
         longitude: ${LONGITUDE}
         units: metric
         cache: 5
-    # - longhorn:
-    #     expanded: false
-    #     total: true
-    #     labels: true
-    #     nodes: false
+    - longhorn:
+        expanded: false
+        total: true
+        labels: true
+        nodes: false
     - datetime:
         text_size: l
         format:
