@@ -102,10 +102,10 @@ data:
         #       url: https://192.168.1.1:443
         #       username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
         #       password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
-        # - MeshCentral:
-        #     href: https://mesh.${SECRET_DOMAIN}
-        #     icon: meshcentral.png
-        #     description: MeshCentral Dashboard
+        - Rook-Ceph:
+            href: https://rook.${SECRET_DOMAIN}
+            icon: ceph.png
+            description: Rook-Ceph Dashboard
         # - NextDNS:
         #     href: https://my.nextdns.io
         #     icon: nextdns.png
@@ -146,10 +146,10 @@ data:
     #           url: udp://${SECRET_UNRAID_IP}:25567
   settings.yaml: |
     title: Dashboard
-    favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
+    favicon: heimdall.png
     theme: dark
     # background:
-    #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/.docs/icons/moon.jpg
+    #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/moon.jpg
     #   opacity: 50
     color: slate
     headerStyle: clean
@@ -192,7 +192,7 @@ data:
     #     expanded: true
     #     memory: true
     - logo:
-        icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
+        icon: heimdall.png
     - search:
         provider: [duckduckgo, google]
         focus: false
@@ -216,7 +216,7 @@ data:
         label: Home
         latitude: ${LATITUDE}
         longitude: ${LONGITUDE}
-        units: metric
+        units: imperial
         cache: 5
     - longhorn:
         expanded: false
