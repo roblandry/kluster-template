@@ -18,7 +18,7 @@ data:
             - icon: google-calendar.png
               href: 'https://calendar.google.com'
         - Outlook:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/outlook.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/outlook.png
               href: 'https://outlook.com'
     - Media:
         - YouTube:
@@ -28,15 +28,15 @@ data:
             - icon: spotify.png
               href: 'http://open.spotify.com'
         - Youtube Music:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/youtube-music.png
+            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/youtube-music.png
               href: 'https://music.youtube.com'
     - Reading:
-        - Beyond:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/beyond.png
-              href: 'https://forums.beyond.ca/search.php?do=getnew&contenttype=vBForum_Post'
-        - Western Subaru Club:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/wsc.png
-              href: 'http://westernsubaruclub.com/smf/index.php?action=unread'
+        # - Beyond:
+        #     - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/beyond.png
+        #       href: 'https://forums.beyond.ca/search.php?do=getnew&contenttype=vBForum_Post'
+        # - Western Subaru Club:
+        #     - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/wsc.png
+        #       href: 'http://westernsubaruclub.com/smf/index.php?action=unread'
         - Reddit:
             - icon: reddit.png
               href: 'https://reddit.com'
@@ -44,7 +44,7 @@ data:
         - kubesearch:
             - icon: kubernetes-dashboard.png
               href: 'https://kubesearch.dev/'
-        - home-ops:
+        - kluster-template:
             - icon: github.png
               href: 'https://github.com/roblandry/kluster-template'
   docker.yaml: ""
@@ -102,10 +102,10 @@ data:
         #       url: https://192.168.1.1:443
         #       username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
         #       password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
-        - MeshCentral:
-            href: https://mesh.${SECRET_DOMAIN}
-            icon: meshcentral.png
-            description: MeshCentral Dashboard
+        # - MeshCentral:
+        #     href: https://mesh.${SECRET_DOMAIN}
+        #     icon: meshcentral.png
+        #     description: MeshCentral Dashboard
         # - NextDNS:
         #     href: https://my.nextdns.io
         #     icon: nextdns.png
@@ -125,7 +125,7 @@ data:
         #       key: {{HOMEPAGE_VAR_PORTAINER_TOKEN}}
     - Storage:
         - Unraid:
-            href: https://nas.${SECRET_DOMAIN}
+            href: https://unraid.${SECRET_DOMAIN}
             icon: unraid.png
             description: Unraid NAS
     # - Minecraft:
@@ -149,7 +149,7 @@ data:
     favicon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
     theme: dark
     # background:
-    #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/moon.jpg
+    #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/.docs/icons/moon.jpg
     #   opacity: 50
     color: slate
     headerStyle: clean
@@ -192,7 +192,7 @@ data:
     #     expanded: true
     #     memory: true
     - logo:
-        icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/icons/lds-transparent.png
+        icon: https://github.com/walkxcode/dashboard-icons/blob/main/png/heimdall.png
     - search:
         provider: [duckduckgo, google]
         focus: false
