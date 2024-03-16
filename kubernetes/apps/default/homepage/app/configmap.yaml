@@ -84,25 +84,58 @@ data:
         #           service_group: Downloads # group name where widget exists
         #           service_name: Readarr # service name for that widget
     - Infrastructure:
-        - Cloudflared:
-            href: https://dash.cloudflare.com/
-            icon: cloudflare-zero-trust.png
-            description: Cloudflared Tunnel Status
-            widget:
-              type: cloudflared
-              accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
-              tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
-              key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
+        # - Cloudflared:
+        #     href: https://dash.cloudflare.com/
+        #     icon: cloudflare-zero-trust.png
+        #     description: Cloudflared Tunnel Status
+        #     widget:
+        #       type: cloudflared
+        #       accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
+        #       tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
+        #       key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
         - Pfsense:
-              href: https://router.${SECRET_DOMAIN}
-              icon: pfsense.png
-              description: Pfsense
-              widget:
-                type: pfsense
-                url: https://router.${SECRET_DOMAIN}
-                username: ${HOMEPAGE_PFSENSE_USERNAME}
-                password: '${HOMEPAGE_PFSENSE_PASSWORD}'
-                wan: igb0
+            href: https://router.${SECRET_DOMAIN}
+            icon: pfsense.png
+            description: Pfsense
+            widget:
+              type: pfsense
+              url: https://router.${SECRET_DOMAIN}
+              username: ${HOMEPAGE_PFSENSE_USERNAME}
+              password: '${HOMEPAGE_PFSENSE_PASSWORD}'
+              wan: igb0
+        - APC:
+            href: https://apc.${SECRET_DOMAIN}
+            icon: apc.png
+            description: APC UPS
+        - KVM1:
+            href: https://kvm1.${SECRET_DOMAIN}
+            icon: kvm.png
+            description: KVM1
+        - KVM2:
+            href: https://kvm2.${SECRET_DOMAIN}
+            icon: kvm.png
+            description: KVM2
+        - AP1:
+            href: https://ap1.${SECRET_DOMAIN}
+            icon: asus.png
+            description: ASUS Wireless AP
+        - Switch:
+            href: https://switch.${SECRET_DOMAIN}
+            icon: cisco.png
+            description: Cisco Switch
+        - Proxmox:
+            href: https://pve.${SECRET_DOMAIN}
+            icon: proxmox.png
+            description: Proxmox
+    - Services:
+        - PiHole:
+            href: http://pi.hole
+            icon: pi-hole.png
+            description: PiHole
+            widget:
+              type: pihole
+              url: http://pi.hole
+              key: ${HOMEPAGE_PIHOLE_TOKEN}
         # - Rook-Ceph:
         #     href: https://rook.${SECRET_DOMAIN}
         #     icon: ceph.png
@@ -111,20 +144,8 @@ data:
             href: https://longhorn.${SECRET_DOMAIN}
             icon: longhorn.png
             description: Longhorn
-        - Proxmox:
-            href: https://pve.${SECRET_DOMAIN}
-            icon: proxmox.png
-            description: Proxmox
-        - PiHole:
-            href: http://pi.hole
-            icon: pihole.png
-            description: PiHole
-            widget:
-              type: pihole
-              url: http://pi.hole
-              key: ${HOMEPAGE_PIHOLE_TOKEN}
         - Portainer:
-            href: &url https://portainer.${SECRET_DOMAIN}
+            href: &url http://${SECRET_UNRAID_IP}:9000
             icon: portainer.png
             description: Docker Container Management
             widget:
@@ -132,12 +153,187 @@ data:
               url: http://${SECRET_UNRAID_IP}:9000
               env: 1
               key: ${HOMEPAGE_VAR_PORTAINER_TOKEN}
+        - Search:
+            href: https://search.${SECRET_DOMAIN}
+            icon: searxng.png
+            description: SearXNG
+        - Log:
+            href: https://log.${SECRET_DOMAIN}
+            icon: graylog.png
+            description: Logs
+        - Pass:
+            href: https://pass.${SECRET_DOMAIN}
+            icon: bitwarden.png
+            description: Password Manager
+    - Media:
+        - Plex:
+            href: https://plex.${SECRET_DOMAIN}
+            icon: plex.png
+            description: Plex Media Server
+        - Photos:
+            href: https://photos.${SECRET_DOMAIN}
+            icon: lychee.png
+            description: Lychee Photos
+        - Photoprism:
+            href: https://photoprism.${SECRET_DOMAIN}
+            icon: photoprism.png
+            description: Photoprism Photo Management
+        - Find:
+            href: https://find.${SECRET_DOMAIN}
+            icon: overseer.png
+            description: Find Media
+    - Media Organization:
+        - Calibre:
+            href: https://calibre.${SECRET_DOMAIN}
+            icon: calibre.png
+            description: Calibre
+        - Calibre-Web:
+            href: https://calibre-web.${SECRET_DOMAIN}
+            icon: calibre-web.png
+            description: Calibre-Web
+            widget:
+              type: calibreweb
+              url: https://calibre-web.${SECRET_DOMAIN}
+              username: username
+              password: password
+        - Radarr:
+            href: https://apps.${SECRET_DOMAIN}/radarr
+            icon: radarr.png
+            description: Radarr
+            widget:
+              type: radarr
+              url: https://apps.${SECRET_DOMAIN}/radarr
+              key: changeme
+        - Sonarr:
+            href: https://apps.${SECRET_DOMAIN}/sonarr
+            icon: sonarr.png
+            description: Sonarr
+            widget:
+              type: sonarr
+              url: https://apps.${SECRET_DOMAIN}/sonarr
+              key: changeme
+        - Lidarr:
+            href: https://apps.${SECRET_DOMAIN}/lidarr
+            icon: lidarr.png
+            description: Lidarr
+            widget:
+              type: lidarr
+              url: https://apps.${SECRET_DOMAIN}/lidarr
+              key: changeme
+        - Readarr:
+            href: https://apps.${SECRET_DOMAIN}/readarr
+            icon: readarr.png
+            description: Readarr
+            widget:
+              type: readarr
+              url: https://apps.${SECRET_DOMAIN}/readarr
+              key: changeme
+        - Prowlarr:
+            href: https://apps.${SECRET_DOMAIN}/prowlarr
+            icon: prowlarr.png
+            description: Prowlarr
+            widget:
+              type: prowlarr
+              url: https://apps.${SECRET_DOMAIN}/prowlarr
+              key: changeme
+        - Bazarr:
+            href: https://apps.${SECRET_DOMAIN}/bazarr
+            icon: bazarr.png
+            description: Bazarr
+            widget:
+              type: bazarr
+              url: https://apps.${SECRET_DOMAIN}/bazarr
+              key: changeme
+    - Downloads:
+        - SABnzbd:
+            href: https://apps.landry.me/sabnzbd/
+            icon: sabnzbd.png
+            description: SABnzbd
+            widget:
+              type: sabnzbd
+              url: https://apps.landry.me/sabnzbd/
+              key: 69464ef6c74746df94d14c2172c22d35
+        - Trnasmission:
+            href: https://apps.landry.me/transmission/
+            icon: transmission.png
+            description: Transmission
+            widget:
+              type: transmission
+              url: http://transmission.host.or.ip
+              username: ${HOMEPAGE_TRANSMISSION_USERNAME}
+              password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
+              # rpcUrl: /transmission/
+    - Automation:
+        - Home Assistant:
+            href: https://hass.${SECRET_DOMAIN}
+            icon: home-assistant.png
+            description: Home Assistant
+    - NVR:
+        - Frigate:
+            href: https://frigate.${SECRET_DOMAIN}
+            icon: frigate.png
+            description: Frigate NVR
+        - Double Take:
+            href: https://dt.${SECRET_DOMAIN}
+            icon: double-take.png
+            description: Double Take NVR
+    - AI:
+        - AI:
+            href: https://ai.${SECRET_DOMAIN}
+            icon: ai.png
+            description: LocalAI
+        - Chat:
+            href: https://chat.${SECRET_DOMAIN}
+            icon: chat.png
+            description: Chat
+        - Chat2:
+            href: https://chat2.${SECRET_DOMAIN}
+            icon: chat.png
+            description: Chat2
+    - Office:
+        - Docs:
+            href: https://docs.${SECRET_DOMAIN}
+            icon: docs.png
+            description: Docs
+        - Cloud:
+            href: https://cloud.${SECRET_DOMAIN}
+            icon: next-cloud.png
+            description: Next Cloud
+        - Tree:
+            href: https://tree.${SECRET_DOMAIN}
+            icon: tree.png
+            description: Webtrees
+    - Web:
+        - www:
+            href: https://www.${SECRET_DOMAIN}
+            icon: wordpress.png
+            description: Personal Website
+        - apps:
+            href: https://apps.${SECRET_DOMAIN}
+            icon: organizr.png
+            description: Personal Apps
+    - Other:
+        - Mealie:
+            href: https://food.${SECRET_DOMAIN}
+            icon: mealie.png
+            description: Mealie Recipies
+        - obi:
+            href: https://obi.${SECRET_DOMAIN}
+            icon: obi.png
+            description: Obi
+        - OctoPi:
+            href: https://octo.${SECRET_DOMAIN}
+            icon: octoprint.png
+            description: OctoPi
     - Storage:
         - Unraid:
             href: https://unraid.${SECRET_DOMAIN}
             icon: unraid.png
             description: Unraid NAS
-
+        - Minio:
+            href: https://minio.${SECRET_DOMAIN}
+            icon: minio.png
+            description: Minio
   settings.yaml: |
     title: Dashboard
     favicon: heimdall.png
@@ -154,6 +350,34 @@ data:
       Media:
         style: column
         icon: mdi-play-circle
+      Media Organization:
+        style: column
+        icon: mdi-movie
+      Downloads:
+        style: column
+        icon: mdi-download-circle
+      Automation:
+        style: column
+        icon: mdi-robot
+      NVR:
+        style: column
+        icon: mdi-video
+      AI:
+        style: column
+        icon: mdi-robot
+      Office:
+        style: column
+        icon: mdi-office-building
+      Web:
+        style: column
+        icon: mdi-web
+      Other:
+        style: column
+        icon: mdi-dots-horizontal
+      Services:
+        style: row
+        columns: 3
+        icon: mdi-server
       Infrastructure:
         style: row
         columns: 3
@@ -168,17 +392,11 @@ data:
       Observability:
         style: column
         icon: mdi-chart-line
-      # Minecraft:
-      #   style: row
-      #   columns: 3
-      #   icon: mdi-minecraft
-      Downloads:
-        style: row
-        columns: 3
-        icon: mdi-download-circle
-    providers:
-      longhorn:
-        url: https://longhorn.${SECRET_DOMAIN}
+
+    # providers:
+    #   longhorn:
+    #     url: https://longhorn.${SECRET_DOMAIN}
+
   widgets.yaml: |
     # - resources:
     #     backend: kubernetes
