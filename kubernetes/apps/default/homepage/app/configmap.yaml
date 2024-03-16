@@ -186,7 +186,7 @@ data:
               type: photoprism
               url: http://${SECRET_UNRAID_IP}:2342
               username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
-              password: ${HOMEPAGE_PHOTOPRISM_PASSWORD}
+              password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
         - Find:
             href: https://find.${SECRET_DOMAIN}
             icon: overseerr.png
