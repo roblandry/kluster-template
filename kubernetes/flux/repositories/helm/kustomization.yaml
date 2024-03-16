@@ -15,6 +15,6 @@ resources:
   # - ./backube.yaml
   # - ./external-secrets.yaml
   - ./homepage.yaml
-  # - ./longhorn.yaml
+  - ./longhorn.yaml
   # - ./piraeus.yaml
   # - ./rook-ceph.yaml
