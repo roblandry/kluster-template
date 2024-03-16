@@ -1,5 +1,5 @@
 ---
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: longhorn
@@ -42,3 +42,14 @@ spec:
       replicaAutoBalance: best-effort
       # defaultLonghornStaticStorageClass: longhorn
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+
+      defaultReplicaCount: 3
+      # backupstorePollInterval: 0
+      restoreVolumeRecurringJobs: true
+      orphanAutoDeletion: true
+      defaultLonghornStaticStorageClass: longhorn
+    ingress:
+      enabled: true
+      ingressClassName: internal
+      host: longhorn.${SECRET_DOMAIN}
+      tls: true
