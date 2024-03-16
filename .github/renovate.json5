@@ -7,7 +7,6 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":automergeBranch"
-    ":timezone(America/New_York)",
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
