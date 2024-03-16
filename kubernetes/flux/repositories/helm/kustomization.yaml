@@ -17,4 +17,4 @@ resources:
   - ./homepage.yaml
   # - ./longhorn.yaml
   - ./piraeus.yaml
-  - ./rook-ceph.yaml
+  # - ./rook-ceph.yaml
