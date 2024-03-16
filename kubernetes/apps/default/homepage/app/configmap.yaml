@@ -45,7 +45,7 @@ data:
             - icon: kubernetes-dashboard.png
               href: 'https://kubesearch.dev/'
         - kluster-template:
-            - icon: github.png
+            - icon: github-light.png
               href: 'https://github.com/roblandry/kluster-template'
   docker.yaml: ""
   kubernetes.yaml: |
@@ -109,11 +109,11 @@ data:
             description: APC UPS
         - KVM1:
             href: https://kvm1.${SECRET_DOMAIN}
-            icon: kvm.png
+            icon: pikvm.png
             description: KVM1
         - KVM2:
             href: https://kvm2.${SECRET_DOMAIN}
-            icon: kvm.png
+            icon: pikvm.png
             description: KVM2
         - AP1:
             href: https://ap1.${SECRET_DOMAIN}
@@ -170,6 +170,10 @@ data:
             href: https://plex.${SECRET_DOMAIN}
             icon: plex.png
             description: Plex Media Server
+            widget:
+              type: plex
+              url: httpS://plex.${SECRET_DOMAIN}
+              key: ${HOMEPAGE_PLEX_KEY}
         - Photos:
             href: https://photos.${SECRET_DOMAIN}
             icon: lychee.png
@@ -178,10 +182,19 @@ data:
             href: https://photoprism.${SECRET_DOMAIN}
             icon: photoprism.png
             description: Photoprism Photo Management
+            widget:
+              type: photoprism
+              url: https://photoprism.${SECRET_DOMAIN}
+              username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
+              password: ${HOMEPAGE_PHOTOPRISM_PASSWORD}
         - Find:
             href: https://find.${SECRET_DOMAIN}
-            icon: overseer.png
+            icon: overseerr.png
             description: Find Media
+            widget:
+              type: overseerr
+              url: https://find.${SECRET_DOMAIN}
+              key: ${HOMEPAGE_OVERSEER_KEY}
     - Media Organization:
         - Calibre:
             href: https://calibre.${SECRET_DOMAIN}
@@ -194,8 +207,8 @@ data:
             widget:
               type: calibreweb
               url: https://calibre-web.${SECRET_DOMAIN}
-              username: username
-              password: password
+              username: ${HOMEPAGE_CALIBREWEB_USERNAME}
+              password: ${HOMEPAGE_CALIBREWEB_PASSWORD}
         - Radarr:
             href: https://apps.${SECRET_DOMAIN}/radarr
             icon: radarr.png
@@ -203,7 +216,7 @@ data:
             widget:
               type: radarr
               url: https://apps.${SECRET_DOMAIN}/radarr
-              key: changeme
+              key: ${HOMEPAGE_RADARR_KEY}
         - Sonarr:
             href: https://apps.${SECRET_DOMAIN}/sonarr
             icon: sonarr.png
@@ -211,7 +224,7 @@ data:
             widget:
               type: sonarr
               url: https://apps.${SECRET_DOMAIN}/sonarr
-              key: changeme
+              key: ${HOMEPAGE_SONARR_KEY}
         - Lidarr:
             href: https://apps.${SECRET_DOMAIN}/lidarr
             icon: lidarr.png
@@ -219,7 +232,7 @@ data:
             widget:
               type: lidarr
               url: https://apps.${SECRET_DOMAIN}/lidarr
-              key: changeme
+              key: ${HOMEPAGE_LIDARR_KEY}
         - Readarr:
             href: https://apps.${SECRET_DOMAIN}/readarr
             icon: readarr.png
@@ -227,7 +240,7 @@ data:
             widget:
               type: readarr
               url: https://apps.${SECRET_DOMAIN}/readarr
-              key: changeme
+              key: ${HOMEPAGE_READARR_KEY}
         - Prowlarr:
             href: https://apps.${SECRET_DOMAIN}/prowlarr
             icon: prowlarr.png
@@ -235,7 +248,7 @@ data:
             widget:
               type: prowlarr
               url: https://apps.${SECRET_DOMAIN}/prowlarr
-              key: changeme
+              key: ${HOMEPAGE_PROWLARR_KEY}
         - Bazarr:
             href: https://apps.${SECRET_DOMAIN}/bazarr
             icon: bazarr.png
@@ -243,7 +256,7 @@ data:
             widget:
               type: bazarr
               url: https://apps.${SECRET_DOMAIN}/bazarr
-              key: changeme
+              key: ${HOMEPAGE_BAZARR_KEY}
     - Downloads:
         - SABnzbd:
             href: https://apps.landry.me/sabnzbd/
@@ -252,7 +265,7 @@ data:
             widget:
               type: sabnzbd
               url: https://apps.landry.me/sabnzbd/
-              key: 69464ef6c74746df94d14c2172c22d35
+              key: ${HOMEPAGE_SABNZBD_KEY}
         - Trnasmission:
             href: https://apps.landry.me/transmission/
             icon: transmission.png
@@ -268,6 +281,19 @@ data:
             href: https://hass.${SECRET_DOMAIN}
             icon: home-assistant.png
             description: Home Assistant
+            # widget:
+            #   type: homeassistant
+            #   url: http://homeassistant.host.or.ip:port
+            #   key: access_token
+            #   custom:
+            #     - state: sensor.total_power
+            #     - state: sensor.total_energy_today
+            #       label: energy today
+            #     - template: "{{ states.switch|selectattr('state','equalto','on')|list|length }}"
+            #       label: switches on
+            #     - state: weather.forecast_home
+            #       label: wind speed
+            #       value: "{attributes.wind_speed} {attributes.wind_speed_unit}"
     - NVR:
         - Frigate:
             href: https://frigate.${SECRET_DOMAIN}
@@ -280,28 +306,33 @@ data:
     - AI:
         - AI:
             href: https://ai.${SECRET_DOMAIN}
-            icon: ai.png
+            icon: openai.png
             description: LocalAI
         - Chat:
             href: https://chat.${SECRET_DOMAIN}
-            icon: chat.png
+            icon: openai.png
             description: Chat
         - Chat2:
             href: https://chat2.${SECRET_DOMAIN}
-            icon: chat.png
+            icon: openai.png
             description: Chat2
     - Office:
         - Docs:
             href: https://docs.${SECRET_DOMAIN}
-            icon: docs.png
-            description: Docs
+            icon: docspell.png
+            description: Docspell
         - Cloud:
             href: https://cloud.${SECRET_DOMAIN}
-            icon: next-cloud.png
+            icon: nextcloud.png
             description: Next Cloud
+            widget:
+              type: nextcloud
+              url: https://cloud.${SECRET_DOMAIN}
+              username: ${HOMEPAGE_NEXTCLOUD_USERNAME}
+              password: ${HOMEPAGE_NEXTCLOUD_PASSWORD}
         - Tree:
             href: https://tree.${SECRET_DOMAIN}
-            icon: tree.png
+            # icon: tree.png
             description: Webtrees
     - Web:
         - www:
@@ -317,9 +348,13 @@ data:
             href: https://food.${SECRET_DOMAIN}
             icon: mealie.png
             description: Mealie Recipies
+            widget:
+              type: mealie
+              url: https://food.${SECRET_DOMAIN}
+              key: ${HOMEPAGE_MEALIE_KEY}
         - obi:
             href: https://obi.${SECRET_DOMAIN}
-            icon: obi.png
+            icon: obico.png
             description: Obi
         - OctoPi:
             href: https://octo.${SECRET_DOMAIN}
@@ -351,7 +386,8 @@ data:
         style: column
         icon: mdi-play-circle
       Media Organization:
-        style: column
+        style: row
+        columns: 4
         icon: mdi-movie
       Downloads:
         style: column
