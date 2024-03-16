@@ -101,7 +101,7 @@ data:
                 type: pfsense
                 url: https://router.${SECRET_DOMAIN}
                 username: ${HOMEPAGE_PFSENSE_USERNAME}
-                password: ${HOMEPAGE_PFSENSE_PASSWORD}
+                password: '${HOMEPAGE_PFSENSE_PASSWORD}'
                 wan: igb0
         # - Rook-Ceph:
         #     href: https://rook.${SECRET_DOMAIN}
