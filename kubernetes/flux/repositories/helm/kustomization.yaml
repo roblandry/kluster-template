@@ -12,9 +12,9 @@ resources:
   - ./openebs.yaml
   - ./stakater.yaml
   # Added
-  - ./backube.yaml
-  - ./external-secrets.yaml
+  # - ./backube.yaml
+  # - ./external-secrets.yaml
   - ./homepage.yaml
   # - ./longhorn.yaml
-  - ./piraeus.yaml
+  # - ./piraeus.yaml
   # - ./rook-ceph.yaml
