@@ -39,8 +39,6 @@ includes:
   user:
     taskfile: .taskfiles/User
     optional: true
-  # Added
-  rook: .taskfiles/Rook/Taskfile.yaml
 
 tasks:
 
