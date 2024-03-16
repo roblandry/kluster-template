@@ -90,64 +90,54 @@ data:
             description: Cloudflared Tunnel Status
             widget:
               type: cloudflared
-              accountid: {{HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}}
-              tunnelid: {{HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}}
-              key: {{HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}}
-        # - Unifi:
-        #     href: https://unifi.ui.com
-        #     icon: unifi.png
-        #     description: Unifi Dashboard
-        #     widget:
-        #       type: unifi
-        #       url: https://192.168.1.1:443
-        #       username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
-        #       password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
-        - Rook-Ceph:
-            href: https://rook.${SECRET_DOMAIN}
-            icon: ceph.png
-            description: Rook-Ceph Dashboard
+              accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
+              tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
+              key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
+        - Pfsense:
+              href: https://router.${SECRET_DOMAIN}
+              icon: pfsense.png
+              description: Pfsense
+              widget:
+                type: pfsense
+                url: https://router.${SECRET_DOMAIN}
+                username: ${HOMEPAGE_PFSENSE_USERNAME}
+                password: ${HOMEPAGE_PFSENSE_PASSWORD}
+                wan: igb0
+        # - Rook-Ceph:
+        #     href: https://rook.${SECRET_DOMAIN}
+        #     icon: ceph.png
+        #     description: Rook-Ceph
         - Longhorn:
             href: https://longhorn.${SECRET_DOMAIN}
             icon: longhorn.png
-            description: Longhorn Dashboard
-        # - NextDNS:
-        #     href: https://my.nextdns.io
-        #     icon: nextdns.png
-        #     description: NextDNS
-        #     widget:
-        #       type: nextdns
-        #       profile: {{HOMEPAGE_VAR_NEXTDNS_ID}}
-        #       key: {{HOMEPAGE_VAR_NEXTDNS_API}}
-        # - Portainer:
-        #     href: &url https://portainer.${SECRET_DOMAIN}
-        #     icon: portainer.png
-        #     description: Docker Container Management
-        #     widget:
-        #       type: portainer
-        #       url: http://${SECRET_UNRAID_IP}:9000
-        #       env: 1
-        #       key: {{HOMEPAGE_VAR_PORTAINER_TOKEN}}
+            description: Longhorn
+        - Proxmox:
+            href: https://pve.${SECRET_DOMAIN}
+            icon: proxmox.png
+            description: Proxmox
+        - PiHole:
+            href: http://pi.hole
+            icon: pihole.png
+            description: PiHole
+            widget:
+              type: pihole
+              url: http://pi.hole
+              key: ${HOMEPAGE_PIHOLE_TOKEN}
+        - Portainer:
+            href: &url https://portainer.${SECRET_DOMAIN}
+            icon: portainer.png
+            description: Docker Container Management
+            widget:
+              type: portainer
+              url: http://${SECRET_UNRAID_IP}:9000
+              env: 1
+              key: ${HOMEPAGE_VAR_PORTAINER_TOKEN}
     - Storage:
         - Unraid:
             href: https://unraid.${SECRET_DOMAIN}
             icon: unraid.png
             description: Unraid NAS
-    # - Minecraft:
-    #     - Vibecraft:
-    #         icon: minecraft.png
-    #         widget:
-    #           type: minecraft
-    #           url: udp://${SECRET_UNRAID_IP}:25565
-    #     - Skyblock:
-    #         icon: minecraft.png
-    #         widget:
-    #           type: minecraft
-    #           url: udp://${SECRET_UNRAID_IP}:25566
-    #     - Create:
-    #         icon: minecraft.png
-    #         widget:
-    #           type: minecraft
-    #           url: udp://${SECRET_UNRAID_IP}:25567
+
   settings.yaml: |
     title: Dashboard
     favicon: heimdall.png
@@ -158,9 +148,9 @@ data:
     color: slate
     headerStyle: clean
     layout:
-      Calendar:
-        style: column
-        icon: mdi-calendar
+      # Calendar:
+      #   style: column
+      #   icon: mdi-calendar
       Media:
         style: column
         icon: mdi-play-circle
@@ -186,9 +176,9 @@ data:
         style: row
         columns: 3
         icon: mdi-download-circle
-    # providers:
-    #   longhorn:
-    #     url: http://longhorn-frontend.storage
+    providers:
+      longhorn:
+        url: https://longhorn.${SECRET_DOMAIN}
   widgets.yaml: |
     # - resources:
     #     backend: kubernetes
