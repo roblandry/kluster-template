@@ -172,7 +172,7 @@ data:
             description: Plex Media Server
             widget:
               type: plex
-              url: httpS://plex.${SECRET_DOMAIN}
+              url: https://plex.${SECRET_DOMAIN}
               key: ${HOMEPAGE_PLEX_KEY}
         - Photos:
             href: https://photos.${SECRET_DOMAIN}
@@ -184,7 +184,7 @@ data:
             description: Photoprism Photo Management
             widget:
               type: photoprism
-              url: https://photoprism.${SECRET_DOMAIN}
+              url: http://${SECRET_UNRAID_IP}:2342
               username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
               password: ${HOMEPAGE_PHOTOPRISM_PASSWORD}
         - Find:
@@ -193,7 +193,7 @@ data:
             description: Find Media
             widget:
               type: overseerr
-              url: https://find.${SECRET_DOMAIN}
+              url: http://${SECRET_UNRAID_IP}:5055
               key: ${HOMEPAGE_OVERSEER_KEY}
     - Media Organization:
         - Calibre:
@@ -327,7 +327,7 @@ data:
             description: Next Cloud
             widget:
               type: nextcloud
-              url: https://cloud.${SECRET_DOMAIN}
+              url: http://${SECRET_UNRAID_IP}:4443
               username: ${HOMEPAGE_NEXTCLOUD_USERNAME}
               password: ${HOMEPAGE_NEXTCLOUD_PASSWORD}
         - Tree:
@@ -350,7 +350,7 @@ data:
             description: Mealie Recipies
             widget:
               type: mealie
-              url: https://food.${SECRET_DOMAIN}
+              url: http://${SECRET_UNRAID_IP}:9093
               key: ${HOMEPAGE_MEALIE_KEY}
         - obi:
             href: https://obi.${SECRET_DOMAIN}
