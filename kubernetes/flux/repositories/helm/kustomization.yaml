@@ -13,6 +13,7 @@ resources:
   - ./stakater.yaml
   # Added
   # - ./backube.yaml
+  - ./csi-driver-nfs.yaml
   # - ./external-secrets.yaml
   - ./homepage.yaml
   - ./longhorn.yaml
