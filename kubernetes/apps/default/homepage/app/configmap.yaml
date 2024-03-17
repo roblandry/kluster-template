@@ -380,7 +380,7 @@ data:
           icon: longhorn.png
           description: Longhorn
   settings.yaml: |
-    title: Dashboard
+    title: Homepage
     favicon: heimdall.png
     theme: dark
     # background:
@@ -458,7 +458,6 @@ data:
         target: _blank
         provider: custom
         url: https://search.${SECRET_DOMAIN}/search?q=
-        target: _blank
     - greeting:
         text_size: xl
         text: "Howdy Hey!"
