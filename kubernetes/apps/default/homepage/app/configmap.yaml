@@ -337,7 +337,7 @@ data:
               type: nextcloud
               url: http://${SECRET_UNRAID_IP}:4443
               username: ${HOMEPAGE_NEXTCLOUD_USERNAME}
-              password: ${HOMEPAGE_NEXTCLOUD_PASSWORD}
+              password: '${HOMEPAGE_NEXTCLOUD_PASSWORD}'
         - Webtrees:
             href: https://tree.${SECRET_DOMAIN}
             # icon: tree.png
