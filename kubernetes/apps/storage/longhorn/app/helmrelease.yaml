@@ -17,6 +17,7 @@ spec:
         namespace: flux-system
   maxHistory: 3
   install:
+    createNamespace: true
     remediation:
       retries: 3
   upgrade:
@@ -37,7 +38,7 @@ spec:
       defaultDataPath: /mnt/external/longhorn
       restoreVolumeRecurringJobs: true
       storageOverProvisioningPercentage: 100
-      storageMinimalAvailablePercentage: 10
+      storageMinimalAvailablePercentage: 1
       guaranteedEngineManagerCPU: 20
       guaranteedReplicaManagerCPU: 20
       orphanAutoDeletion: true
