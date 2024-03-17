@@ -37,7 +37,7 @@ spec:
       defaultDataPath: /mnt/external/longhorn
       restoreVolumeRecurringJobs: true
       storageOverProvisioningPercentage: 100
-      storageMinimalAvailablePercentage: 1
+      storageMinimalAvailablePercentage: 10
       guaranteedEngineManagerCPU: 20
       guaranteedReplicaManagerCPU: 20
       orphanAutoDeletion: true
