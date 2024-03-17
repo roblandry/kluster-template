@@ -436,9 +436,9 @@ data:
         style: column
         icon: mdi-chart-line
 
-    # providers:
-    #   longhorn:
-    #     url: https://longhorn.${SECRET_DOMAIN}
+    providers:
+      longhorn:
+        url: https://longhorn.${SECRET_DOMAIN}
 
   widgets.yaml: |
     # - resources:
