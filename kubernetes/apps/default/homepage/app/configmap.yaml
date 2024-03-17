@@ -206,9 +206,9 @@ data:
             description: Calibre-Web
             widget:
               type: calibreweb
-              url: https://calibre-web.${SECRET_DOMAIN}
+              url: http://${SECRET_UNRAID_IP}:8073
               username: ${HOMEPAGE_CALIBREWEB_USERNAME}
-              password: ${HOMEPAGE_CALIBREWEB_PASSWORD}
+              password: '${HOMEPAGE_CALIBREWEB_PASSWORD}'
         - Radarr:
             href: https://apps.${SECRET_DOMAIN}/radarr
             icon: radarr.png
