@@ -96,7 +96,7 @@ data:
         - Pfsense:
             href: https://router.${SECRET_DOMAIN}
             icon: pfsense.png
-            description: Pfsense
+            description: Pfsense Firewall
             widget:
               type: pfsense
               url: https://router.${SECRET_DOMAIN}
@@ -122,16 +122,16 @@ data:
         - Switch:
             href: https://switch.${SECRET_DOMAIN}
             icon: cisco.png
-            description: Cisco Switch
+            description: Cisco POE Switch
         - Proxmox:
             href: https://pve.${SECRET_DOMAIN}
             icon: proxmox.png
-            description: Proxmox
+            description: Proxmox Cluster
     - Services:
         - PiHole:
             href: http://pi.hole
             icon: pi-hole.png
-            description: PiHole
+            description: PiHole DNS
             widget:
               type: pihole
               url: http://pi.hole
@@ -164,7 +164,7 @@ data:
         - Pass:
             href: https://pass.${SECRET_DOMAIN}
             icon: bitwarden.png
-            description: Password Manager
+            description: Bitwarden Password Manager
     - Media:
         - Plex:
             href: https://plex.${SECRET_DOMAIN}
@@ -195,15 +195,23 @@ data:
               type: overseerr
               url: http://${SECRET_UNRAID_IP}:5055
               key: ${HOMEPAGE_OVERSEER_KEY}
+        - Tautulli:
+            href: http://${SECRET_UNRAID_IP}:8182
+            icon: tautulli.png
+            description: Media Info
+            widget:
+              type: overseerr
+              url: http://${SECRET_UNRAID_IP}:5055
+              key: ${HOMEPAGE_OVERSEER_KEY}
     - Media Organization:
         - Calibre:
             href: https://calibre.${SECRET_DOMAIN}
             icon: calibre.png
-            description: Calibre
+            description: Calibre Book Management
         - Calibre-Web:
             href: https://calibre-web.${SECRET_DOMAIN}
             icon: calibre-web.png
-            description: Calibre-Web
+            description: Calibre-Web Book Management
             widget:
               type: calibreweb
               url: http://${SECRET_UNRAID_IP}:8073
@@ -212,7 +220,7 @@ data:
         - Radarr:
             href: https://apps.${SECRET_DOMAIN}/radarr
             icon: radarr.png
-            description: Radarr
+            description: Movie Management
             widget:
               type: radarr
               url: https://apps.${SECRET_DOMAIN}/radarr
@@ -220,7 +228,7 @@ data:
         - Sonarr:
             href: https://apps.${SECRET_DOMAIN}/sonarr
             icon: sonarr.png
-            description: Sonarr
+            description: TV Show Management
             widget:
               type: sonarr
               url: https://apps.${SECRET_DOMAIN}/sonarr
@@ -228,7 +236,7 @@ data:
         - Lidarr:
             href: https://apps.${SECRET_DOMAIN}/lidarr
             icon: lidarr.png
-            description: Lidarr
+            description: Music Management
             widget:
               type: lidarr
               url: https://apps.${SECRET_DOMAIN}/lidarr
@@ -236,7 +244,7 @@ data:
         - Readarr:
             href: https://apps.${SECRET_DOMAIN}/readarr
             icon: readarr.png
-            description: Readarr
+            description: Book Management
             widget:
               type: readarr
               url: https://apps.${SECRET_DOMAIN}/readarr
@@ -244,7 +252,7 @@ data:
         - Prowlarr:
             href: https://apps.${SECRET_DOMAIN}/prowlarr
             icon: prowlarr.png
-            description: Prowlarr
+            description: Indexer Manager
             widget:
               type: prowlarr
               url: https://apps.${SECRET_DOMAIN}/prowlarr
@@ -252,7 +260,7 @@ data:
         - Bazarr:
             href: https://apps.${SECRET_DOMAIN}/bazarr
             icon: bazarr.png
-            description: Bazarr
+            description: Subtitle Manager
             widget:
               type: bazarr
               url: https://apps.${SECRET_DOMAIN}/bazarr
@@ -261,7 +269,7 @@ data:
         - SABnzbd:
             href: https://apps.landry.me/sabnzbd/
             icon: sabnzbd.png
-            description: SABnzbd
+            description: NZB Downloader
             widget:
               type: sabnzbd
               url: https://apps.landry.me/sabnzbd/
@@ -269,7 +277,7 @@ data:
         - Trnasmission:
             href: https://apps.landry.me/transmission/
             icon: transmission.png
-            description: Transmission
+            description: Torrent Downloader
             widget:
               type: transmission
               url: http://transmission.host.or.ip
@@ -317,23 +325,23 @@ data:
             icon: openai.png
             description: Chat2
     - Office:
-        - Docs:
+        - Docspell:
             href: https://docs.${SECRET_DOMAIN}
             icon: docspell.png
-            description: Docspell
-        - Cloud:
+            description: Document Management
+        - NextCloud:
             href: https://cloud.${SECRET_DOMAIN}
             icon: nextcloud.png
-            description: Next Cloud
+            description: Personal Cloud
             widget:
               type: nextcloud
               url: http://${SECRET_UNRAID_IP}:4443
               username: ${HOMEPAGE_NEXTCLOUD_USERNAME}
               password: ${HOMEPAGE_NEXTCLOUD_PASSWORD}
-        - Tree:
+        - Webtrees:
             href: https://tree.${SECRET_DOMAIN}
             # icon: tree.png
-            description: Webtrees
+            description: Family Tree
     - Web:
         - www:
             href: https://www.${SECRET_DOMAIN}
@@ -347,19 +355,19 @@ data:
         - Mealie:
             href: https://food.${SECRET_DOMAIN}
             icon: mealie.png
-            description: Mealie Recipies
+            description: Recipe Manager
             widget:
               type: mealie
               url: http://${SECRET_UNRAID_IP}:9093
               key: ${HOMEPAGE_MEALIE_KEY}
-        - obi:
+        - Obico:
             href: https://obi.${SECRET_DOMAIN}
             icon: obico.png
-            description: Obi
-        - OctoPi:
+            description: 3D Printer Manager
+        - OctoPrint:
             href: https://octo.${SECRET_DOMAIN}
             icon: octoprint.png
-            description: OctoPi
+            description: 3D Printer Manager
     - Storage:
         - Unraid:
             href: https://unraid.${SECRET_DOMAIN}
@@ -368,7 +376,7 @@ data:
         - Minio:
             href: https://minio.${SECRET_DOMAIN}
             icon: minio.png
-            description: Minio
+            description: Minio Object Storage
   settings.yaml: |
     title: Dashboard
     favicon: heimdall.png
