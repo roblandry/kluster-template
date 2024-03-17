@@ -8,374 +8,377 @@ metadata:
 data:
   bookmarks.yaml: |
     - Communicate:
-        - Discord:
-            - icon: discord.png
-              href: 'https://discord.com/app'
-        - Gmail:
-            - icon: gmail.png
-              href: 'http://gmail.com'
-        - Google Calendar:
-            - icon: google-calendar.png
-              href: 'https://calendar.google.com'
-        - Outlook:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/outlook.png
-              href: 'https://outlook.com'
+      - Discord:
+        - icon: discord.png
+          href: 'https://discord.com/app'
+      - Gmail:
+        - icon: gmail.png
+          href: 'http://gmail.com'
+      - Google Calendar:
+        - icon: google-calendar.png
+          href: 'https://calendar.google.com'
+      - Outlook:
+        - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/outlook.png
+          href: 'https://outlook.com'
     - Media:
-        - YouTube:
-            - icon: youtube.png
-              href: 'https://youtube.com/feed/subscriptions'
-        - Spotify:
-            - icon: spotify.png
-              href: 'http://open.spotify.com'
-        - Youtube Music:
-            - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/youtube-music.png
-              href: 'https://music.youtube.com'
+      - YouTube:
+        - icon: youtube.png
+          href: 'https://youtube.com/feed/subscriptions'
+      - Spotify:
+        - icon: spotify.png
+          href: 'http://open.spotify.com'
+      - Youtube Music:
+        - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/youtube-music.png
+          href: 'https://music.youtube.com'
     - Reading:
-        # - Beyond:
-        #     - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/beyond.png
-        #       href: 'https://forums.beyond.ca/search.php?do=getnew&contenttype=vBForum_Post'
-        # - Western Subaru Club:
-        #     - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/wsc.png
-        #       href: 'http://westernsubaruclub.com/smf/index.php?action=unread'
-        - Reddit:
-            - icon: reddit.png
-              href: 'https://reddit.com'
+      # - Beyond:
+      #   - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/beyond.png
+      #     href: 'https://forums.beyond.ca/search.php?do=getnew&contenttype=vBForum_Post'
+      # - Western Subaru Club:
+      #     - icon: https://raw.githubusercontent.com/roblandry/kluster-template/main/.docs/icons/wsc.png
+      #       href: 'http://westernsubaruclub.com/smf/index.php?action=unread'
+      - Reddit:
+        - icon: reddit.png
+          href: 'https://reddit.com'
     - Git:
-        - kubesearch:
-            - icon: kubernetes-dashboard.png
-              href: 'https://kubesearch.dev/'
-        - kluster-template:
-            - icon: github-light.png
-              href: 'https://github.com/roblandry/kluster-template'
+      - kubesearch:
+        - icon: kubernetes-dashboard.png
+          href: 'https://kubesearch.dev/'
+      - kluster-template:
+        - icon: github-light.png
+          href: 'https://github.com/roblandry/kluster-template'
+
   docker.yaml: ""
+
   kubernetes.yaml: |
     mode: cluster
+
   services.yaml: |
     # - Calendar:
-        # - Calendar:
-        #     widget:
-        #       type: calendar
-        #       firstDayInWeek: sunday # optional - defaults to monday
-        #       view: monthly # optional - possible values monthly, agenda
-        #       maxEvents: 10 # optional - defaults to 10
-        #       integrations: # optional
-        #         - type: sonarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Sonarr # service name for that widget
-        #         - type: radarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Radarr # service name for that widget
-        #         - type: readarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Readarr # service name for that
-        # - Agenda:
-        #     widget:
-        #       type: calendar
-        #       view: agenda # optional - possible values monthly, agenda
-        #       maxEvents: 20 # optional - defaults to 10
-        #       integrations: # optional
-        #         - type: sonarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr>
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Sonarr # service name for that widget
-        #         - type: radarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr>
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Radarr # service name for that widget
-        #         - type: readarr # active widget type that is currently enabled on homepage - possible values: radarr, sonar>
-        #           service_group: Downloads # group name where widget exists
-        #           service_name: Readarr # service name for that widget
+    #   - Calendar:
+    #       widget:
+    #         type: calendar
+    #         firstDayInWeek: sunday # optional - defaults to monday
+    #         view: monthly # optional - possible values monthly, agenda
+    #         maxEvents: 10 # optional - defaults to 10
+    #         integrations: # optional
+    #           - type: sonarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Sonarr # service name for that widget
+    #           - type: radarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Radarr # service name for that widget
+    #           - type: readarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr, lidarr, readarr
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Readarr # service name for that
+    #   - Agenda:
+    #       widget:
+    #         type: calendar
+    #         view: agenda # optional - possible values monthly, agenda
+    #         maxEvents: 20 # optional - defaults to 10
+    #         integrations: # optional
+    #           - type: sonarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr>
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Sonarr # service name for that widget
+    #           - type: radarr # active widget type that is currently enabled on homepage - possible values: radarr, sonarr>
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Radarr # service name for that widget
+    #           - type: readarr # active widget type that is currently enabled on homepage - possible values: radarr, sonar>
+    #             service_group: Downloads # group name where widget exists
+    #             service_name: Readarr # service name for that widget
     - Infrastructure:
-        # - Cloudflared:
-        #     href: https://dash.cloudflare.com/
-        #     icon: cloudflare-zero-trust.png
-        #     description: Cloudflared Tunnel Status
-        #     widget:
-        #       type: cloudflared
-        #       accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
-        #       tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
-        #       key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
-        - Pfsense:
-            href: https://router.${SECRET_DOMAIN}
-            icon: pfsense.png
-            description: Pfsense Firewall
-            widget:
-              type: pfsense
-              url: https://router.${SECRET_DOMAIN}
-              username: ${HOMEPAGE_PFSENSE_USERNAME}
-              password: '${HOMEPAGE_PFSENSE_PASSWORD}'
-              wan: igb0
-        - APC:
-            href: https://apc.${SECRET_DOMAIN}
-            icon: apc.png
-            description: APC UPS
-        - KVM1:
-            href: https://kvm1.${SECRET_DOMAIN}
-            icon: pikvm.png
-            description: KVM1
-        - KVM2:
-            href: https://kvm2.${SECRET_DOMAIN}
-            icon: pikvm.png
-            description: KVM2
-        - AP1:
-            href: https://ap1.${SECRET_DOMAIN}
-            icon: asus.png
-            description: ASUS Wireless AP
-        - Switch:
-            href: https://switch.${SECRET_DOMAIN}
-            icon: cisco.png
-            description: Cisco POE Switch
-        - Proxmox:
-            href: https://pve.${SECRET_DOMAIN}
-            icon: proxmox.png
-            description: Proxmox Cluster
+      - Cloudflared:
+          href: https://dash.cloudflare.com/
+          icon: cloudflare-zero-trust.png
+          description: Cloudflared Tunnel Status
+          widget:
+            type: cloudflared
+            accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
+            tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
+            key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
+      - Pfsense:
+          href: https://router.${SECRET_DOMAIN}
+          icon: pfsense.png
+          description: Pfsense Firewall
+          widget:
+            type: pfsense
+            url: https://router.${SECRET_DOMAIN}
+            username: ${HOMEPAGE_PFSENSE_USERNAME}
+            password: '${HOMEPAGE_PFSENSE_PASSWORD}'
+            wan: igb0
+      - APC:
+          href: https://apc.${SECRET_DOMAIN}
+          icon: apc.png
+          description: APC UPS
+      - KVM1:
+          href: https://kvm1.${SECRET_DOMAIN}
+          icon: pikvm.png
+          description: KVM1
+      - KVM2:
+          href: https://kvm2.${SECRET_DOMAIN}
+          icon: pikvm.png
+          description: KVM2
+      - AP1:
+          href: https://ap1.${SECRET_DOMAIN}
+          icon: asus.png
+          description: ASUS Wireless AP
+      - Switch:
+          href: https://switch.${SECRET_DOMAIN}
+          icon: cisco.png
+          description: Cisco POE Switch
+      - Proxmox:
+          href: https://pve.${SECRET_DOMAIN}
+          icon: proxmox.png
+          description: Proxmox Cluster
     - Services:
-        - PiHole:
-            href: http://pi.hole
-            icon: pi-hole.png
-            description: PiHole DNS
-            widget:
-              type: pihole
-              url: http://pi.hole
-              key: ${HOMEPAGE_PIHOLE_TOKEN}
-        # - Rook-Ceph:
+      - PiHole:
+          href: http://pi.hole
+          icon: pi-hole.png
+          description: PiHole DNS
+          widget:
+            type: pihole
+            url: http://pi.hole
+            key: ${HOMEPAGE_PIHOLE_TOKEN}
+      - Portainer:
+          href: &url http://${SECRET_UNRAID_IP}:9000
+          icon: portainer.png
+          description: Docker Container Management
+          widget:
+            type: portainer
+            url: http://${SECRET_UNRAID_IP}:9000
+            env: 1
+            key: ${HOMEPAGE_VAR_PORTAINER_TOKEN}
+      - Search:
+          href: https://search.${SECRET_DOMAIN}
+          icon: searxng.png
+          description: SearXNG
+      - Log:
+          href: https://log.${SECRET_DOMAIN}
+          icon: graylog.png
+          description: Logs
+      - Pass:
+          href: https://pass.${SECRET_DOMAIN}
+          icon: bitwarden.png
+          description: Bitwarden Password Manager
+    - Media:
+      - Plex:
+          href: https://plex.${SECRET_DOMAIN}
+          icon: plex.png
+          description: Plex Media Server
+          widget:
+            type: plex
+            url: https://plex.${SECRET_DOMAIN}
+            key: ${HOMEPAGE_PLEX_KEY}
+      - Photos:
+          href: https://photos.${SECRET_DOMAIN}
+          icon: lychee.png
+          description: Lychee Photos
+      - Photoprism:
+          href: https://photoprism.${SECRET_DOMAIN}
+          icon: photoprism.png
+          description: Photoprism Photo Management
+          widget:
+            type: photoprism
+            url: http://${SECRET_UNRAID_IP}:2342
+            username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
+            password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
+      - Find:
+          href: https://find.${SECRET_DOMAIN}
+          icon: overseerr.png
+          description: Find Media
+          widget:
+            type: overseerr
+            url: http://${SECRET_UNRAID_IP}:5055
+            key: ${HOMEPAGE_OVERSEER_KEY}
+      - Tautulli:
+          href: http://${SECRET_UNRAID_IP}:8182
+          icon: tautulli.png
+          description: Media Info
+          widget:
+            type: overseerr
+            url: http://${SECRET_UNRAID_IP}:5055
+            key: ${HOMEPAGE_OVERSEER_KEY}
+    - Media Organization:
+      - Calibre:
+          href: https://calibre.${SECRET_DOMAIN}
+          icon: calibre.png
+          description: Calibre Book Management
+      - Calibre-Web:
+          href: https://calibre-web.${SECRET_DOMAIN}
+          icon: calibre-web.png
+          description: Calibre-Web Book Management
+          widget:
+            type: calibreweb
+            url: http://${SECRET_UNRAID_IP}:8073
+            username: ${HOMEPAGE_CALIBREWEB_USERNAME}
+            password: '${HOMEPAGE_CALIBREWEB_PASSWORD}'
+      - Radarr:
+          href: https://apps.${SECRET_DOMAIN}/radarr
+          icon: radarr.png
+          description: Movie Management
+          widget:
+            type: radarr
+            url: https://apps.${SECRET_DOMAIN}/radarr
+            key: ${HOMEPAGE_RADARR_KEY}
+      - Sonarr:
+          href: https://apps.${SECRET_DOMAIN}/sonarr
+          icon: sonarr.png
+          description: TV Show Management
+          widget:
+            type: sonarr
+            url: https://apps.${SECRET_DOMAIN}/sonarr
+            key: ${HOMEPAGE_SONARR_KEY}
+      - Lidarr:
+          href: https://apps.${SECRET_DOMAIN}/lidarr
+          icon: lidarr.png
+          description: Music Management
+          widget:
+            type: lidarr
+            url: https://apps.${SECRET_DOMAIN}/lidarr
+            key: ${HOMEPAGE_LIDARR_KEY}
+      - Readarr:
+          href: https://apps.${SECRET_DOMAIN}/readarr
+          icon: readarr.png
+          description: Book Management
+          widget:
+            type: readarr
+            url: https://apps.${SECRET_DOMAIN}/readarr
+            key: ${HOMEPAGE_READARR_KEY}
+      - Prowlarr:
+          href: https://apps.${SECRET_DOMAIN}/prowlarr
+          icon: prowlarr.png
+          description: Indexer Manager
+          widget:
+            type: prowlarr
+            url: https://apps.${SECRET_DOMAIN}/prowlarr
+            key: ${HOMEPAGE_PROWLARR_KEY}
+      - Bazarr:
+          href: https://apps.${SECRET_DOMAIN}/bazarr
+          icon: bazarr.png
+          description: Subtitle Manager
+          widget:
+            type: bazarr
+            url: https://apps.${SECRET_DOMAIN}/bazarr
+            key: ${HOMEPAGE_BAZARR_KEY}
+    - Downloads:
+      - SABnzbd:
+          href: https://apps.${SECRET_DOMAIN}/sabnzbd/
+          icon: sabnzbd.png
+          description: NZB Downloader
+          widget:
+            type: sabnzbd
+            url: https://apps.${SECRET_DOMAIN}/sabnzbd/
+            key: ${HOMEPAGE_SABNZBD_KEY}
+      - Transmission:
+          href: https://apps.${SECRET_DOMAIN}/transmission/
+          icon: transmission.png
+          description: Torrent Downloader
+          widget:
+            type: transmission
+            url: https://apps.${SECRET_DOMAIN}/transmission
+            username: ${HOMEPAGE_TRANSMISSION_USERNAME}
+            password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
+            # rpcUrl: /transmission/
+    - Automation:
+      - Home Assistant:
+          href: https://hass.${SECRET_DOMAIN}
+          icon: home-assistant.png
+          description: Home Assistant
+          # widget:
+          #   type: homeassistant
+          #   url: http://homeassistant.host.or.ip:port
+          #   key: access_token
+          #   custom:
+          #     - state: sensor.total_power
+          #     - state: sensor.total_energy_today
+          #       label: energy today
+          #     - template: "{{ states.switch|selectattr('state','equalto','on')|list|length }}"
+          #       label: switches on
+          #     - state: weather.forecast_home
+          #       label: wind speed
+          #       value: "{attributes.wind_speed} {attributes.wind_speed_unit}"
+    - NVR:
+      - Frigate:
+          href: https://frigate.${SECRET_DOMAIN}
+          icon: frigate.png
+          description: Frigate NVR
+      - Double Take:
+          href: https://dt.${SECRET_DOMAIN}
+          icon: double-take.png
+          description: Double Take NVR
+    - AI:
+      - AI:
+          href: https://ai.${SECRET_DOMAIN}
+          icon: openai.png
+          description: LocalAI
+      - Chat:
+          href: https://chat.${SECRET_DOMAIN}
+          icon: openai.png
+          description: Chat
+      - Chat2:
+          href: https://chat2.${SECRET_DOMAIN}
+          icon: openai.png
+          description: Chat2
+    - Office:
+      - Docspell:
+          href: https://docs.${SECRET_DOMAIN}
+          icon: docspell.png
+          description: Document Management
+      - NextCloud:
+          href: https://cloud.${SECRET_DOMAIN}
+          icon: nextcloud.png
+          description: Personal Cloud
+          widget:
+            type: nextcloud
+            url: https://cloud.${SECRET_DOMAIN}
+            key: ${HOMEPAGE_NEXTCLOUD_KEY}
+      - Webtrees:
+          href: https://tree.${SECRET_DOMAIN}
+          icon: https://raw.githubusercontent.com/fisharebest/webtrees/main/public/favicon-192.png
+          description: Family Tree
+    - Web:
+      - www:
+          href: https://www.${SECRET_DOMAIN}
+          icon: wordpress.png
+          description: Personal Website
+      - apps:
+          href: https://apps.${SECRET_DOMAIN}
+          icon: organizr.png
+          description: Personal Apps
+    - Other:
+      - Mealie:
+          href: https://food.${SECRET_DOMAIN}
+          icon: mealie.png
+          description: Recipe Manager
+          widget:
+            type: mealie
+            url: http://${SECRET_UNRAID_IP}:9093
+            key: ${HOMEPAGE_MEALIE_KEY}
+      - Obico:
+          href: https://obi.${SECRET_DOMAIN}
+          icon: obico.png
+          description: 3D Printer Manager
+      - OctoPrint:
+          href: https://octo.${SECRET_DOMAIN}
+          icon: octoprint.png
+          description: 3D Printer Manager
+    - Storage:
+      - Unraid:
+          href: https://unraid.${SECRET_DOMAIN}
+          icon: unraid.png
+          description: Unraid NAS
+      - Minio:
+          href: https://minio.${SECRET_DOMAIN}
+          icon: minio.png
+          description: Minio Object Storage
+      # - Rook-Ceph:
         #     href: https://rook.${SECRET_DOMAIN}
         #     icon: ceph.png
         #     description: Rook-Ceph
-        - Longhorn:
-            href: https://longhorn.${SECRET_DOMAIN}
-            icon: longhorn.png
-            description: Longhorn
-        - Portainer:
-            href: &url http://${SECRET_UNRAID_IP}:9000
-            icon: portainer.png
-            description: Docker Container Management
-            widget:
-              type: portainer
-              url: http://${SECRET_UNRAID_IP}:9000
-              env: 1
-              key: ${HOMEPAGE_VAR_PORTAINER_TOKEN}
-        - Search:
-            href: https://search.${SECRET_DOMAIN}
-            icon: searxng.png
-            description: SearXNG
-        - Log:
-            href: https://log.${SECRET_DOMAIN}
-            icon: graylog.png
-            description: Logs
-        - Pass:
-            href: https://pass.${SECRET_DOMAIN}
-            icon: bitwarden.png
-            description: Bitwarden Password Manager
-    - Media:
-        - Plex:
-            href: https://plex.${SECRET_DOMAIN}
-            icon: plex.png
-            description: Plex Media Server
-            widget:
-              type: plex
-              url: https://plex.${SECRET_DOMAIN}
-              key: ${HOMEPAGE_PLEX_KEY}
-        - Photos:
-            href: https://photos.${SECRET_DOMAIN}
-            icon: lychee.png
-            description: Lychee Photos
-        - Photoprism:
-            href: https://photoprism.${SECRET_DOMAIN}
-            icon: photoprism.png
-            description: Photoprism Photo Management
-            widget:
-              type: photoprism
-              url: http://${SECRET_UNRAID_IP}:2342
-              username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
-              password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
-        - Find:
-            href: https://find.${SECRET_DOMAIN}
-            icon: overseerr.png
-            description: Find Media
-            widget:
-              type: overseerr
-              url: http://${SECRET_UNRAID_IP}:5055
-              key: ${HOMEPAGE_OVERSEER_KEY}
-        - Tautulli:
-            href: http://${SECRET_UNRAID_IP}:8182
-            icon: tautulli.png
-            description: Media Info
-            widget:
-              type: overseerr
-              url: http://${SECRET_UNRAID_IP}:5055
-              key: ${HOMEPAGE_OVERSEER_KEY}
-    - Media Organization:
-        - Calibre:
-            href: https://calibre.${SECRET_DOMAIN}
-            icon: calibre.png
-            description: Calibre Book Management
-        - Calibre-Web:
-            href: https://calibre-web.${SECRET_DOMAIN}
-            icon: calibre-web.png
-            description: Calibre-Web Book Management
-            widget:
-              type: calibreweb
-              url: http://${SECRET_UNRAID_IP}:8073
-              username: ${HOMEPAGE_CALIBREWEB_USERNAME}
-              password: '${HOMEPAGE_CALIBREWEB_PASSWORD}'
-        - Radarr:
-            href: https://apps.${SECRET_DOMAIN}/radarr
-            icon: radarr.png
-            description: Movie Management
-            widget:
-              type: radarr
-              url: https://apps.${SECRET_DOMAIN}/radarr
-              key: ${HOMEPAGE_RADARR_KEY}
-        - Sonarr:
-            href: https://apps.${SECRET_DOMAIN}/sonarr
-            icon: sonarr.png
-            description: TV Show Management
-            widget:
-              type: sonarr
-              url: https://apps.${SECRET_DOMAIN}/sonarr
-              key: ${HOMEPAGE_SONARR_KEY}
-        - Lidarr:
-            href: https://apps.${SECRET_DOMAIN}/lidarr
-            icon: lidarr.png
-            description: Music Management
-            widget:
-              type: lidarr
-              url: https://apps.${SECRET_DOMAIN}/lidarr
-              key: ${HOMEPAGE_LIDARR_KEY}
-        - Readarr:
-            href: https://apps.${SECRET_DOMAIN}/readarr
-            icon: readarr.png
-            description: Book Management
-            widget:
-              type: readarr
-              url: https://apps.${SECRET_DOMAIN}/readarr
-              key: ${HOMEPAGE_READARR_KEY}
-        - Prowlarr:
-            href: https://apps.${SECRET_DOMAIN}/prowlarr
-            icon: prowlarr.png
-            description: Indexer Manager
-            widget:
-              type: prowlarr
-              url: https://apps.${SECRET_DOMAIN}/prowlarr
-              key: ${HOMEPAGE_PROWLARR_KEY}
-        - Bazarr:
-            href: https://apps.${SECRET_DOMAIN}/bazarr
-            icon: bazarr.png
-            description: Subtitle Manager
-            widget:
-              type: bazarr
-              url: https://apps.${SECRET_DOMAIN}/bazarr
-              key: ${HOMEPAGE_BAZARR_KEY}
-    - Downloads:
-        - SABnzbd:
-            href: https://apps.${SECRET_DOMAIN}/sabnzbd/
-            icon: sabnzbd.png
-            description: NZB Downloader
-            widget:
-              type: sabnzbd
-              url: https://apps.${SECRET_DOMAIN}/sabnzbd/
-              key: ${HOMEPAGE_SABNZBD_KEY}
-        - Transmission:
-            href: https://apps.${SECRET_DOMAIN}/transmission/
-            icon: transmission.png
-            description: Torrent Downloader
-            widget:
-              type: transmission
-              url: https://apps.${SECRET_DOMAIN}/transmission/
-              username: ${HOMEPAGE_TRANSMISSION_USERNAME}
-              password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
-              # rpcUrl: /transmission/
-    - Automation:
-        - Home Assistant:
-            href: https://hass.${SECRET_DOMAIN}
-            icon: home-assistant.png
-            description: Home Assistant
-            # widget:
-            #   type: homeassistant
-            #   url: http://homeassistant.host.or.ip:port
-            #   key: access_token
-            #   custom:
-            #     - state: sensor.total_power
-            #     - state: sensor.total_energy_today
-            #       label: energy today
-            #     - template: "{{ states.switch|selectattr('state','equalto','on')|list|length }}"
-            #       label: switches on
-            #     - state: weather.forecast_home
-            #       label: wind speed
-            #       value: "{attributes.wind_speed} {attributes.wind_speed_unit}"
-    - NVR:
-        - Frigate:
-            href: https://frigate.${SECRET_DOMAIN}
-            icon: frigate.png
-            description: Frigate NVR
-        - Double Take:
-            href: https://dt.${SECRET_DOMAIN}
-            icon: double-take.png
-            description: Double Take NVR
-    - AI:
-        - AI:
-            href: https://ai.${SECRET_DOMAIN}
-            icon: openai.png
-            description: LocalAI
-        - Chat:
-            href: https://chat.${SECRET_DOMAIN}
-            icon: openai.png
-            description: Chat
-        - Chat2:
-            href: https://chat2.${SECRET_DOMAIN}
-            icon: openai.png
-            description: Chat2
-    - Office:
-        - Docspell:
-            href: https://docs.${SECRET_DOMAIN}
-            icon: docspell.png
-            description: Document Management
-        - NextCloud:
-            href: https://cloud.${SECRET_DOMAIN}
-            icon: nextcloud.png
-            description: Personal Cloud
-            widget:
-              type: nextcloud
-              url: https://cloud.${SECRET_DOMAIN}
-              key: ${HOMEPAGE_NEXTCLOUD_KEY}
-        - Webtrees:
-            href: https://tree.${SECRET_DOMAIN}
-            icon: https://raw.githubusercontent.com/fisharebest/webtrees/main/public/favicon-192.png
-            description: Family Tree
-    - Web:
-        - www:
-            href: https://www.${SECRET_DOMAIN}
-            icon: wordpress.png
-            description: Personal Website
-        - apps:
-            href: https://apps.${SECRET_DOMAIN}
-            icon: organizr.png
-            description: Personal Apps
-    - Other:
-        - Mealie:
-            href: https://food.${SECRET_DOMAIN}
-            icon: mealie.png
-            description: Recipe Manager
-            widget:
-              type: mealie
-              url: http://${SECRET_UNRAID_IP}:9093
-              key: ${HOMEPAGE_MEALIE_KEY}
-        - Obico:
-            href: https://obi.${SECRET_DOMAIN}
-            icon: obico.png
-            description: 3D Printer Manager
-        - OctoPrint:
-            href: https://octo.${SECRET_DOMAIN}
-            icon: octoprint.png
-            description: 3D Printer Manager
-    - Storage:
-        - Unraid:
-            href: https://unraid.${SECRET_DOMAIN}
-            icon: unraid.png
-            description: Unraid NAS
-        - Minio:
-            href: https://minio.${SECRET_DOMAIN}
-            icon: minio.png
-            description: Minio Object Storage
+      - Longhorn:
+          href: https://longhorn.${SECRET_DOMAIN}
+          icon: longhorn.png
+          description: Longhorn
   settings.yaml: |
     title: Dashboard
     favicon: heimdall.png
@@ -450,8 +453,11 @@ data:
     - logo:
         icon: heimdall.png
     - search:
-        provider: [duckduckgo, google]
+        # provider: [duckduckgo, google]
         focus: false
+        target: _blank
+        provider: custom
+        url: https://search.${SECRET_DOMAIN}/search?q=
         target: _blank
     - greeting:
         text_size: xl
