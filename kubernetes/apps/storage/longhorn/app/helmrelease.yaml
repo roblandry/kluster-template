@@ -33,7 +33,8 @@ spec:
     defaultSettings:
       backupTarget: "nfs://${SECRET_UNRAID_IP}:${SECRET_UNRAID_SHARE}/backup"
       defaultReplicaCount: 3
-      backupstorePollInterval: 0
+      # backupstorePollInterval: 0
+      replicaAutoBalance: best-effort
       createDefaultDiskLabeledNodes: true
       # defaultDataPath: /mnt/pve/HDD/longhorn
       restoreVolumeRecurringJobs: true
