@@ -390,7 +390,8 @@ data:
       #   style: column
       #   icon: mdi-calendar
       Media:
-        style: column
+        style: row
+        columns: 4
         icon: mdi-play-circle
       Media Organization:
         style: row
