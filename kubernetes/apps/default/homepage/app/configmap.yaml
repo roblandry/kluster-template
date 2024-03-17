@@ -267,20 +267,20 @@ data:
               key: ${HOMEPAGE_BAZARR_KEY}
     - Downloads:
         - SABnzbd:
-            href: https://apps.landry.me/sabnzbd/
+            href: https://apps.${SECRET_DOMAIN}/sabnzbd/
             icon: sabnzbd.png
             description: NZB Downloader
             widget:
               type: sabnzbd
-              url: https://apps.landry.me/sabnzbd/
+              url: https://apps.${SECRET_DOMAIN}/sabnzbd/
               key: ${HOMEPAGE_SABNZBD_KEY}
-        - Trnasmission:
-            href: https://apps.landry.me/transmission/
+        - Transmission:
+            href: https://apps.${SECRET_DOMAIN}/transmission/
             icon: transmission.png
             description: Torrent Downloader
             widget:
               type: transmission
-              url: http://transmission.host.or.ip
+              url: https://apps.${SECRET_DOMAIN}/transmission/
               username: ${HOMEPAGE_TRANSMISSION_USERNAME}
               password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
               # rpcUrl: /transmission/
@@ -335,7 +335,7 @@ data:
             description: Personal Cloud
             widget:
               type: nextcloud
-              url: http://${SECRET_UNRAID_IP}:4443
+              url: https://cloud.${SECRET_DOMAIN}
               key: ${HOMEPAGE_NEXTCLOUD_KEY}
         - Webtrees:
             href: https://tree.${SECRET_DOMAIN}
