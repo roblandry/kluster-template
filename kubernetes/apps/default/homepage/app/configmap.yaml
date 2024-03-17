@@ -275,10 +275,10 @@ data:
           description: Torrent Downloader
           widget:
             type: transmission
-            url: https://apps.${SECRET_DOMAIN}/transmission
+            url: http://${SECRET_UNRAID_IP}:9091
             username: ${HOMEPAGE_TRANSMISSION_USERNAME}
             password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
-            # rpcUrl: /transmission/
+            rpcUrl: /transmission/
     - Automation:
       - Home Assistant:
           href: https://hass.${SECRET_DOMAIN}
