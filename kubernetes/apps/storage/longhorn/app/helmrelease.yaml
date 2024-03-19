@@ -38,7 +38,7 @@ spec:
       guaranteedEngineManagerCPU: 20
       guaranteedReplicaManagerCPU: 20
       concurrentAutomaticEngineUpgradePerNodeLimit: 1
-      # defaultDataPath: "/storage01"
+      defaultDataPath: "/nfs/longhorn"
       # defaultDataLocality: best-effort
       replicaAutoBalance: best-effort
       # defaultLonghornStaticStorageClass: longhorn
