@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-  maxHistory: 3
+  # maxHistory: 3
   install:
     remediation:
       retries: 3
@@ -23,14 +23,14 @@ spec:
     cleanupOnFail: true
     remediation:
       retries: 3
-  uninstall:
-    keepHistory: false
+  # uninstall:
+  #   keepHistory: false
   values:
     controllers:
-      main:
+      mealie:
         type: statefulset
         containers:
-          main:
+          app:
             image:
               repository: ghcr.io/mealie-recipes/mealie
               tag: latest
@@ -55,13 +55,13 @@ spec:
               limits:
                 memory: 800Mi
     service:
-      main:
-        controller: main
+      app:
+        controller: *app
         ports:
           http:
             port: &httpPort 9000
     ingress:
-      main:
+      app:
         className: external
         annotations:
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
@@ -75,7 +75,7 @@ spec:
             paths:
               - path: /
                 service:
-                  identifier: main
+                  identifier: app
                   port: *httpPort
         tls:
           - hosts:
