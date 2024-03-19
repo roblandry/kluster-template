@@ -6,7 +6,7 @@ metadata:
   name: longhorn
   namespace: storage
 spec:
-  interval: 30m
+  interval: 15m
   chart:
     spec:
       chart: longhorn
@@ -31,27 +31,17 @@ spec:
       enabled: true
       createPrometheusRules: true
     defaultSettings:
-      # backupTarget: "nfs://${SECRET_UNRAID_IP}:${SECRET_UNRAID_SHARE}/backup"
-      defaultReplicaCount: 3
-      # backupstorePollInterval: 0
-      replicaAutoBalance: best-effort
+      backupTarget: "nfs://${SECRET_UNRAID_IP}:${SECRET_UNRAID_SHARE}/backup"
       createDefaultDiskLabeledNodes: true
-      # defaultDataPath: /mnt/pve/HDD/longhorn
-      # defaultDataPath: /nfs/longhorn
-      restoreVolumeRecurringJobs: true
       storageOverProvisioningPercentage: 100
-      # storageMinimalAvailablePercentage: 1
+      storageMinimalAvailablePercentage: 10
       guaranteedEngineManagerCPU: 20
       guaranteedReplicaManagerCPU: 20
-      # --
+      concurrentAutomaticEngineUpgradePerNodeLimit: 1
       # defaultDataPath: "/storage01"
       # defaultDataLocality: best-effort
+      replicaAutoBalance: best-effort
       # defaultLonghornStaticStorageClass: longhorn
-      # backupstorePollInterval: 0
-      # --
-      orphanAutoDeletion: true
-      concurrentAutomaticEngineUpgradePerNodeLimit: 1
-      defaultLonghornStaticStorageClass: longhorn
       nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
     ingress:
       enabled: true
