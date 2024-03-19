@@ -37,7 +37,7 @@ spec:
       replicaAutoBalance: best-effort
       createDefaultDiskLabeledNodes: true
       # defaultDataPath: /mnt/pve/HDD/longhorn
-      defaultDataPath: /nfs/longhorn
+      # defaultDataPath: /nfs/longhorn
       restoreVolumeRecurringJobs: true
       storageOverProvisioningPercentage: 100
       # storageMinimalAvailablePercentage: 1
