@@ -28,7 +28,7 @@ spec:
   values:
     controllers:
       mealie:
-        type: statefulset
+        # type: statefulset
         containers:
           app:
             image:
