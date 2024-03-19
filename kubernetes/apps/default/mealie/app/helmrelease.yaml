@@ -1,0 +1,99 @@
+---
+# yaml-language-server: schema=https://kubernetes-schemas.thesteamedcrab.com/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: &app mealie
+  namespace: default
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.0.4
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s-charts
+        namespace: flux-system
+
+  maxHistory: 3
+
+  install:
+    remediation:
+      retries: 3
+
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+
+  uninstall:
+    keepHistory: false
+
+  values:
+    controllers:
+      main:
+        type: statefulset
+
+        containers:
+          main:
+            image:
+              repository: ghcr.io/mealie-recipes/mealie
+              tag: latest
+
+            env:
+              BASE_URL: https://mealie.${SECRET_DOMAIN}
+              ALLOW_SIGNUP: false
+              API_DOCS: false
+              # SMTP_HOST: ${ROUTER_IP}
+              # SMTP_PORT: 25
+              # SMTP_AUTH_STRATEGY: NONE
+              # SMTP_FROM_EMAIL: mealie@${SECRET_DOMAIN}
+              # LDAP_AUTH_ENABLED: true
+              # LDAP_SERVER_URL: "ldap://lldap.auth.svc.cluster.local:3890"
+              # LDAP_TLS_INSECURE: true
+              # LDAP_BIND_TEMPLATE: cn={},dc=thesteamedcrab,dc=com
+              # LDAP_BASE_DN: dc=thesteamedcrab,dc=com
+              # LDAP_ADMIN_FILTER: cn=admin,ou=people,dc=thesteamedcrab,dc=com
+
+            resources:
+              requests:
+                cpu: 100m
+                memory: 800Mi
+              limits:
+                memory: 800Mi
+
+    service:
+      main:
+        controller: main
+        ports:
+          http:
+            port: &httpPort 9000
+
+    ingress:
+      main:
+        className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          # hajimari.io/enable: "true"
+          # hajimari.io/appName: "Mealie"
+          # hajimari.io/icon: mdi:food
+          # hajimari.io/group: "home"
+          # hajimari.io/instance: "user,admin"
+        hosts:
+          - host: &host mealie.${SECRET_DOMAIN}
+            paths:
+              - path: /
+                service:
+                  identifier: main
+                  port: *httpPort
+        tls:
+          - hosts:
+              - *host
+
+    persistence:
+      config:
+        existingClaim: mealie-config-pvc
+        globalMounts:
+          - path: /app/data
