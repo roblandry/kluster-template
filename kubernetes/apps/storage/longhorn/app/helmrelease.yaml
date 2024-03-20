@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
+# yaml-language-server: $schema=https://kubernetes-schemas.thesteamedcrab.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
@@ -9,40 +9,47 @@ spec:
   interval: 15m
   chart:
     spec:
+      # renovate: registryUrl=https://charts.longhorn.io
       chart: longhorn
-      version: 1.6.0
+      version: 1.5.3
       sourceRef:
         kind: HelmRepository
-        name: longhorn
+        name: longhorn-charts
         namespace: flux-system
-  maxHistory: 3
-  install:
-    createNamespace: true
-    remediation:
-      retries: 3
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
-  uninstall:
-    keepHistory: false
   values:
-    monitoring:
-      enabled: true
-      createPrometheusRules: true
+    env:
+      TZ: "${TIMEZONE}"
+    persistence:
+      defaultClass: false
+      defaultClassReplicaCount: 1
+      reclaimPolicy: Retain
+
     defaultSettings:
+      defaultReplicaCount: 2
+      replicaAutoBalance: best-effort
+      defaultDataLocality: best-effort
       backupTarget: "nfs://${SECRET_UNRAID_IP}:${SECRET_UNRAID_SHARE}/backup"
       createDefaultDiskLabeledNodes: true
-      storageOverProvisioningPercentage: 100
       storageMinimalAvailablePercentage: 10
-      guaranteedEngineManagerCPU: 20
-      guaranteedReplicaManagerCPU: 20
-      concurrentAutomaticEngineUpgradePerNodeLimit: 1
       defaultDataPath: "/nfs/longhorn"
-      # defaultDataLocality: best-effort
-      replicaAutoBalance: best-effort
-      # defaultLonghornStaticStorageClass: longhorn
-      nodeDownPodDeletionPolicy: delete-both-statefulset-and-deployment-pod
+
+    longhornManager:
+      securityContext:
+        privileged: true
+
+    # ingress:
+    #   enabled: true
+    #   ingressClassName: internal
+    #   host: "longhorn.${SECRET_DOMAIN}"
+    #   tls: true
+    #   tlsSecret: "${SECRET_DOMAIN/./-}-tls"
+      # annotations:
+      #   hajimari.io/enable: "true"
+      #   hajimari.io/icon: cow
+      #   hajimari.io/group: storage
+      #   hajimari.io/appName: longhorn
+      #   hajimari.io/instance: "admin"
+
     ingress:
       enabled: true
       ingressClassName: internal
