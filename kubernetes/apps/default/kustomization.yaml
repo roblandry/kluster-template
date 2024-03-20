@@ -7,7 +7,7 @@ resources:
   # Flux-Kustomizations
   # - ./free-game-notifier/ks.yaml
   - ./homepage/ks.yaml
-  - ./mealie/ks.yaml
+  # - ./mealie/ks.yaml
   - ./misc-ingress/ks.yaml
   # - ./mosquitto/ks.yaml
   # - ./rss-forwarder/ks.yaml
