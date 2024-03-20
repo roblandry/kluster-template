@@ -33,8 +33,8 @@ spec:
   storageClassName: mealie-config-storage-class
   csi:
     driver: driver.longhorn.io
-    fsType: xfs
+    fsType: ext4
     volumeAttributes:
       numberOfReplicas: "2"
       staleReplicaTimeout: "2880"
-    volumeHandle: mealie-config-xfs
+    volumeHandle: mealie-config-ext4
