@@ -8,7 +8,7 @@ metadata:
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  path: ./kubernetes/main/apps/storage/longhorn/app
+  path: ./kubernetes/apps/storage/longhorn/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -34,7 +34,7 @@ metadata:
 spec:
   dependsOn:
     - name: storage-longhorn
-  path: ./kubernetes/main/apps/storage/longhorn/config
+  path: ./kubernetes/apps/storage/longhorn/config
   prune: true
   sourceRef:
     kind: GitRepository
