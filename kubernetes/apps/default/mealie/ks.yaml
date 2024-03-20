@@ -13,7 +13,7 @@ spec:
   # dependsOn:
   #   - name: external-secrets-bitwarden-secrets-manager
   dependsOn:
-    - name: longhorn-storage
+    - name: longhorn
   path: ./kubernetes/apps/default/mealie/app
   prune: true
   sourceRef:
