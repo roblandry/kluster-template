@@ -35,6 +35,14 @@ spec:
   storageClassName: local-storage
   local:
     path: /nfs/longhorn/mealie-config
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - worker-2
   # csi:
   #   driver: driver.longhorn.io
   #   fsType: ext4
