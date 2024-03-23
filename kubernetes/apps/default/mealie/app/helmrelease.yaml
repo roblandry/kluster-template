@@ -48,6 +48,8 @@ spec:
               # LDAP_BIND_TEMPLATE: cn={},dc=thesteamedcrab,dc=com
               # LDAP_BASE_DN: dc=thesteamedcrab,dc=com
               # LDAP_ADMIN_FILTER: cn=admin,ou=people,dc=thesteamedcrab,dc=com
+            securityContext:
+              runAsUser: 65534
             resources:
               requests:
                 cpu: 100m
