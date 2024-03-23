@@ -12,8 +12,8 @@ spec:
     requests:
       storage: 2Gi
   volumeName: mealie-config-pv
-  # storageClassName: mealie-config-storage-class
-  storageClassName: local-storage
+  storageClassName: mealie-config-storage-class
+  # storageClassName: local-storage
 
 ---
 apiVersion: v1
@@ -31,22 +31,22 @@ spec:
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  # storageClassName: mealie-config-storage-class
-  storageClassName: local-storage
-  local:
-    path: /nfs/longhorn/mealie-config
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: kubernetes.io/hostname
-          operator: In
-          values:
-          - worker-2
-  # csi:
-  #   driver: driver.longhorn.io
-  #   fsType: ext4
-  #   volumeAttributes:
-  #     numberOfReplicas: "2"
-  #     staleReplicaTimeout: "2880"
-  #   volumeHandle: mealie-config-ext4
+  storageClassName: mealie-config-storage-class
+  # storageClassName: local-storage
+  # local:
+  #   path: /nfs/longhorn/mealie-config
+  # nodeAffinity:
+  #   required:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/hostname
+  #         operator: In
+  #         values:
+  #         - worker-2
+  csi:
+    driver: driver.longhorn.io
+    fsType: ext4
+    volumeAttributes:
+      numberOfReplicas: "2"
+      staleReplicaTimeout: "2880"
+    volumeHandle: mealie-config-ext4
