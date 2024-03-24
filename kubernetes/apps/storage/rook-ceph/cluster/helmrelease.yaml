@@ -84,11 +84,25 @@ spec:
         urlPrefix: /
         ssl: false
       storage:
-        useAllNodes: true
-        useAllDevices: true
-        deviceFilter: nvme0n1
+        useAllNodes: false
+        useAllDevices: false
+        deviceFilter:
         config:
           osdsPerDevice: "1"
+          nodes:
+          - name: "kontrol-1"
+            devices:
+            - name: "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00007"
+          # - name: "worker-2"
+          #   devices:
+          #   - name: "/dev/disk/by-id/ata-ST4000DM004-XXXX"
+          - name: "worker-3"
+            devices:
+              - name: "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00007"
+          - name: "worker-4"
+            devices:
+              - name: "/dev/disk/by-id/ata-QEMU_HARDDISK_QM00007"
+
       placement:
         mgr: &placement
           nodeAffinity:

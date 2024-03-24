@@ -16,7 +16,7 @@ resources:
   - ./csi-driver-nfs.yaml
   # - ./external-secrets.yaml
   - ./homepage.yaml
-  - ./infisical.yaml
-  - ./longhorn.yaml
+  # - ./infisical.yaml
+  # - ./longhorn.yaml
   # - ./piraeus.yaml
-  # - ./rook-ceph.yaml
+  - ./rook-ceph.yaml
