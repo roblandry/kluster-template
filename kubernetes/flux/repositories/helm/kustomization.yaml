@@ -19,4 +19,4 @@ resources:
   # - ./infisical.yaml
   # - ./longhorn.yaml
   - ./piraeus.yaml
-  # - ./rook-ceph.yaml
+  - ./rook-ceph.yaml
