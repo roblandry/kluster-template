@@ -35,13 +35,28 @@ spec:
       createPrometheusRules: true
     ingress:
       dashboard:
-        ingressClassName: internal
+        className: internal
         host:
           name: &host rook.${SECRET_DOMAIN}
           path: /
         tls:
           - hosts:
               - *host
+    # ingress:
+    #   app:
+    #     className: internal
+    #     hosts:
+    #       - host: &host rook.${SECRET_DOMAIN}
+    #         paths:
+    #           - path: /
+    #             pathType: Prefix
+    #             service:
+    #               identifier: app
+    #               port: http
+    #     tls:
+    #       - hosts:
+    #           - *host
+
     toolbox:
       enabled: true
     configOverride: |
@@ -219,7 +234,7 @@ spec:
             region: us-east-1
         ingress:
           enabled: true
-          ingressClassName: internal
+          className: internal
           host:
             name: &host rgw.${SECRET_DOMAIN}
             path: /
