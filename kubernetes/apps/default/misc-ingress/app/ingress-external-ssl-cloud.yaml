@@ -14,7 +14,7 @@ metadata:
     gethomepage.dev/description: Personal Cloud
     gethomepage.dev/widget.type: nextcloud
     gethomepage.dev/widget.key: ${HOMEPAGE_NEXTCLOUD_KEY}
-    # gethomepage.dev/widget.url: https://cloud.${SECRET_DOMAIN}
+    gethomepage.dev/widget.url: https://cloud.${SECRET_DOMAIN}
 spec:
   ingressClassName: external
   rules:
