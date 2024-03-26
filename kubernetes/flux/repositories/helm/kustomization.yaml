@@ -15,7 +15,7 @@ resources:
   - ./backube.yaml
   # - ./bitnami.yaml
   - ./csi-driver-nfs.yaml
-  # - ./external-secrets.yaml
+  - ./external-secrets.yaml
   # - ./grafana.yaml
   - ./homepage.yaml
   - ./infisical.yaml
