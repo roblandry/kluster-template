@@ -5,6 +5,14 @@ metadata:
   name: food
   annotations:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: mealie.png
+    gethomepage.dev/name: Mealie
+    gethomepage.dev/group: Other
+    gethomepage.dev/description: Receipe Manager
+    gethomepage.dev/widget.type: mealie
+    gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:9093
+    gethomepage.dev/widget.key: ${HOMEPAGE_MEALIE_KEY}
 spec:
   ingressClassName: external
   rules:

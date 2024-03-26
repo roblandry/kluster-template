@@ -96,40 +96,13 @@ data:
           #   accountid: ${HOMEPAGE_VAR_CLOUDFLARED_ACCOUNTID}
           #   tunnelid: ${HOMEPAGE_VAR_CLOUDFLARED_TUNNELID}
           #   key: ${HOMEPAGE_VAR_CLOUDFLARED_API_TOKEN}
-      - Pfsense:
-          href: https://router.${SECRET_DOMAIN}
-          icon: pfsense.png
-          description: Pfsense Firewall
-          widget:
-            type: pfsense
-            url: https://router.${SECRET_DOMAIN}
-            username: ${HOMEPAGE_PFSENSE_USERNAME}
-            password: '${HOMEPAGE_PFSENSE_PASSWORD}'
-            wan: igb0
-      - APC:
-          href: https://apc.${SECRET_DOMAIN}
-          icon: apc.png
-          description: APC UPS
-      - KVM1:
-          href: https://kvm1.${SECRET_DOMAIN}
-          icon: pikvm.png
-          description: KVM1
-      - KVM2:
-          href: https://kvm2.${SECRET_DOMAIN}
-          icon: pikvm.png
-          description: KVM2
-      - AP1:
-          href: https://ap1.${SECRET_DOMAIN}
-          icon: asus.png
-          description: ASUS Wireless AP
-      - Switch:
-          href: https://switch.${SECRET_DOMAIN}
-          icon: cisco.png
-          description: Cisco POE Switch
-      - Proxmox:
-          href: https://pve.${SECRET_DOMAIN}
-          icon: proxmox.png
-          description: Proxmox Cluster
+      # - Pfsense:
+      # - APC:
+      # - KVM1:
+      # - KVM2:
+      # - AP1:
+      # - Switch:
+      # - Proxmox:
     - Services:
       - PiHole:
           href: http://pi.hole
@@ -148,48 +121,15 @@ data:
             url: http://${SECRET_UNRAID_IP}:9000
             env: 1
             key: ${HOMEPAGE_VAR_PORTAINER_TOKEN}
-      - Search:
-          href: https://search.${SECRET_DOMAIN}
-          icon: searxng.png
-          description: SearXNG
-      - Log:
-          href: https://log.${SECRET_DOMAIN}
-          icon: graylog.png
-          description: Logs
-      - Pass:
-          href: https://pass.${SECRET_DOMAIN}
-          icon: bitwarden.png
-          description: Bitwarden Password Manager
+      # - Search:
+      # - Log:
+      # - Pass:
     - Media:
-      - Plex:
-          href: https://plex.${SECRET_DOMAIN}
-          icon: plex.png
-          description: Plex Media Server
-          widget:
-            type: plex
-            url: https://plex.${SECRET_DOMAIN}
-            key: ${HOMEPAGE_PLEX_KEY}
-      - Photos:
-          href: https://photos.${SECRET_DOMAIN}
-          icon: lychee.png
-          description: Lychee Photos
-      - Photoprism:
-          href: https://photoprism.${SECRET_DOMAIN}
-          icon: photoprism.png
-          description: Photoprism Photo Management
-          widget:
-            type: photoprism
-            url: http://${SECRET_UNRAID_IP}:2342
-            username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
-            password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
-      - Find:
-          href: https://find.${SECRET_DOMAIN}
-          icon: overseerr.png
-          description: Find Media
-          widget:
-            type: overseerr
-            url: http://${SECRET_UNRAID_IP}:5055
-            key: ${HOMEPAGE_OVERSEER_KEY}
+      # - Plex:
+      # - Photos:
+      # - Photoprism:
+      # - Find:
+      # - Ombi:
       - Tautulli:
           href: http://${SECRET_UNRAID_IP}:8182
           icon: tautulli.png
@@ -199,19 +139,8 @@ data:
             url: http://${SECRET_UNRAID_IP}:5055
             key: ${HOMEPAGE_OVERSEER_KEY}
     - Media Organization:
-      - Calibre:
-          href: https://calibre.${SECRET_DOMAIN}
-          icon: calibre.png
-          description: Calibre Book Management
-      - Calibre-Web:
-          href: https://calibre-web.${SECRET_DOMAIN}
-          icon: calibre-web.png
-          description: Calibre-Web Book Management
-          widget:
-            type: calibreweb
-            url: http://${SECRET_UNRAID_IP}:8073
-            username: ${HOMEPAGE_CALIBREWEB_USERNAME}
-            password: '${HOMEPAGE_CALIBREWEB_PASSWORD}'
+      # - Calibre:
+      # - Calibre-Web:
       - Radarr:
           href: https://apps.${SECRET_DOMAIN}/radarr
           icon: radarr.png
@@ -280,105 +209,40 @@ data:
             password: '${HOMEPAGE_TRANSMISSION_PASSWORD}'
             rpcUrl: /transmission/
     - Automation:
-      - Home Assistant:
-          href: https://hass.${SECRET_DOMAIN}
-          icon: home-assistant.png
-          description: Home Assistant
-          # widget:
-          #   type: homeassistant
-          #   url: http://homeassistant.host.or.ip:port
-          #   key: access_token
-          #   custom:
-          #     - state: sensor.total_power
-          #     - state: sensor.total_energy_today
-          #       label: energy today
-          #     - template: "{{ states.switch|selectattr('state','equalto','on')|list|length }}"
-          #       label: switches on
-          #     - state: weather.forecast_home
-          #       label: wind speed
-          #       value: "{attributes.wind_speed} {attributes.wind_speed_unit}"
-    - NVR:
-      - Frigate:
-          href: https://frigate.${SECRET_DOMAIN}
-          icon: frigate.png
-          description: Frigate NVR
-      - Double Take:
-          href: https://dt.${SECRET_DOMAIN}
-          icon: double-take.png
-          description: Double Take NVR
-    - AI:
+      # - Home Assistant:
+      - Valetudo:
+          href: http://10.0.0.88
+          icon: valetudo.png
+          description: Valetudo Robot Vacuum
+    # - NVR:
+      # - Frigate:
+      # - Double Take:
+    # - AI:
       # - AI:
-      #     href: https://ai.${SECRET_DOMAIN}
-      #     icon: openai.png
-      #     description: LocalAI
-      - Chat:
-          href: https://chat.${SECRET_DOMAIN}
-          icon: openai.png
-          description: Chat
-      - Chat2:
-          href: https://chat2.${SECRET_DOMAIN}
-          icon: openai.png
-          description: Chat2
-    - Office:
-      - Docspell:
-          href: https://docs.${SECRET_DOMAIN}
-          icon: docspell.png
-          description: Document Management
-      - NextCloud:
-          href: https://cloud.${SECRET_DOMAIN}
-          icon: nextcloud.png
-          description: Personal Cloud
-          widget:
-            type: nextcloud
-            url: https://cloud.${SECRET_DOMAIN}
-            key: ${HOMEPAGE_NEXTCLOUD_KEY}
-      - Webtrees:
-          href: https://tree.${SECRET_DOMAIN}
-          icon: https://raw.githubusercontent.com/fisharebest/webtrees/main/public/favicon-192.png
-          description: Family Tree
-    - Web:
-      - www:
-          href: https://www.${SECRET_DOMAIN}
-          icon: wordpress.png
-          description: Personal Website
-      - apps:
-          href: https://apps.${SECRET_DOMAIN}
-          icon: organizr.png
-          description: Personal Apps
-    - Other:
-      - Mealie:
-          href: https://food.${SECRET_DOMAIN}
-          icon: mealie.png
-          description: Recipe Manager
-          widget:
-            type: mealie
-            url: http://${SECRET_UNRAID_IP}:9093
-            key: ${HOMEPAGE_MEALIE_KEY}
-      - Obico:
-          href: https://obi.${SECRET_DOMAIN}
-          icon: obico.png
-          description: 3D Printer Manager
-      - OctoPrint:
-          href: https://octo.${SECRET_DOMAIN}
-          icon: octoprint.png
-          description: 3D Printer Manager
+      # - Chat:
+      # - Chat2:
+    # - Office:
+      # - Docspell:
+      # - NextCloud:
+      # - Webtrees:
+    # - Web:
+      # - www:
+      # - apps:
+    # - Other:
+      # - Mealie:
+      # - Obico:
+      # - OctoPrint:
     - Storage:
-      - Unraid:
-          href: https://unraid.${SECRET_DOMAIN}
-          icon: unraid.png
-          description: Unraid NAS
-      - Minio:
-          href: https://minio.${SECRET_DOMAIN}
-          icon: minio.png
-          description: Minio Object Storage
-      # - Rook-Ceph:
-        #     href: https://rook.${SECRET_DOMAIN}
-        #     icon: ceph.png
-        #     description: Rook-Ceph
-      - Longhorn:
-          href: https://longhorn.${SECRET_DOMAIN}
-          icon: longhorn.png
-          description: Longhorn
+      # - Unraid:
+      # - Minio:
+      - Rook-Ceph:
+          href: https://rook.${SECRET_DOMAIN}
+          icon: ceph.png
+          description: Rook-Ceph
+      # - Longhorn:
+      #     href: https://longhorn.${SECRET_DOMAIN}
+      #     icon: longhorn.png
+      #     description: Longhorn
   settings.yaml: |
     title: Homepage
     favicon: heimdall.png

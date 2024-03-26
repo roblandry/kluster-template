@@ -7,6 +7,11 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: wordpress.png
+    gethomepage.dev/name: Wordpress
+    gethomepage.dev/group: Web
+    gethomepage.dev/description: Personal Website
 spec:
   ingressClassName: external
   rules:

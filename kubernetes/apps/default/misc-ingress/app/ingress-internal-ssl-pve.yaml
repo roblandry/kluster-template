@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: proxmox.png
+    gethomepage.dev/name: Proxmox
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: Proxmox Virtual Environment
 spec:
   ingressClassName: internal
   rules:

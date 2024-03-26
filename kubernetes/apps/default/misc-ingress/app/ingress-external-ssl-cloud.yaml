@@ -7,6 +7,14 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: nextcloud.png
+    gethomepage.dev/name: NextCloud
+    gethomepage.dev/group: Office
+    gethomepage.dev/description: Personal Cloud
+    gethomepage.dev/widget.type: nextcloud
+    gethomepage.dev/widget.key: ${HOMEPAGE_NEXTCLOUD_KEY}
+    # gethomepage.dev/widget.url: https://cloud.${SECRET_DOMAIN}
 spec:
   ingressClassName: external
   rules:

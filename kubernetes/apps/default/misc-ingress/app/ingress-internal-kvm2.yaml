@@ -3,9 +3,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kvm2
-  # annotations:
-  #   nginx.ingress.kubernetes.io/enable-cors: "true"
-  #   nginx.ingress.kubernetes.io/cors-allow-origin: "https://kvm2.${SECRET_DOMAIN}"
+  annotations:
+    # nginx.ingress.kubernetes.io/enable-cors: "true"
+    # nginx.ingress.kubernetes.io/cors-allow-origin: "https://kvm2.${SECRET_DOMAIN}"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: tinypilot.png
+    gethomepage.dev/name: TinyPilot
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: TinyPilot KVM-over-IP
 spec:
   ingressClassName: internal
   rules:

@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tree
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: webtrees.png
+    gethomepage.dev/name: Tree
+    gethomepage.dev/group: Office
+    gethomepage.dev/description: Family Tree
 spec:
   ingressClassName: internal
   rules:

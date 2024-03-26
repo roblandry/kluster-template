@@ -3,6 +3,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: photoprism
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: photoprism.png
+    gethomepage.dev/name: PhotoPrism
+    gethomepage.dev/group: Media
+    gethomepage.dev/description: Photo Management
+    gethomepage.dev/widget.type: photoprism
+    gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:2342
+    gethomepage.dev/widget.username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
+    gethomepage.dev/widget.password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
 spec:
   ingressClassName: internal
   rules:

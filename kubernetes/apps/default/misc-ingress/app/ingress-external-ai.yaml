@@ -10,8 +10,6 @@ metadata:
     gethomepage.dev/name: LocalAI
     gethomepage.dev/group: AI
     gethomepage.dev/description: Local AI
-    # gethomepage.dev/widget.type: prometheus
-    # gethomepage.dev/widget.url: http://kube-prometheus-stack-prometheus.observability.svc.cluster.local:9090
 spec:
   ingressClassName: external
   rules:

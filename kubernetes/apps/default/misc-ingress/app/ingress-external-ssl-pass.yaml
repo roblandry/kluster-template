@@ -5,6 +5,11 @@ metadata:
   name: pass
   annotations:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: bitwarden.png
+    gethomepage.dev/name: Pass
+    gethomepage.dev/group: Searvices
+    gethomepage.dev/description: Vaultwarden Password Manager
 spec:
   ingressClassName: external
   rules:

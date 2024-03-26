@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: switch
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: cisco.png
+    gethomepage.dev/name: Cisco POE Switch
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: Cisco POE Switch
 spec:
   ingressClassName: internal
   rules:

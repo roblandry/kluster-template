@@ -6,6 +6,16 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: pfsense.png
+    gethomepage.dev/name: pfSense
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: pfSense Router
+    gethomepage.dev/widget.type: pfsense
+    gethomepage.dev/widget.url: https://router.${SECRET_DOMAIN}
+    gethomepage.dev/widget.username: ${HOMEPAGE_PFSENSE_USERNAME}
+    gethomepage.dev/widget.password: ${HOMEPAGE_PFSENSE_PASSWORD
+    gethomepage.dev/widget.wan: igb0
 spec:
   ingressClassName: internal
   rules:

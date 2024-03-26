@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: dt
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: double-take.png
+    gethomepage.dev/name: Double Take
+    gethomepage.dev/group: NVR
+    gethomepage.dev/description: Double Take NVR
 spec:
   ingressClassName: internal
   rules:

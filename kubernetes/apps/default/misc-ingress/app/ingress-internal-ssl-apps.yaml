@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: organizr.png
+    gethomepage.dev/name: Organizr
+    gethomepage.dev/group: Web
+    gethomepage.dev/description: Personal Web Apps
 spec:
   ingressClassName: internal
   rules:

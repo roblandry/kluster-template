@@ -5,6 +5,14 @@ metadata:
   name: hass
   annotations:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: homeassistant.png
+    gethomepage.dev/name: Home Assistant
+    gethomepage.dev/group: Automation
+    gethomepage.dev/description: Home Automation
+    # gethomepage.dev/widget.type: homeassistant
+    # gethomepage.dev/widget.url: http://${SECRET_HASS_IP}:8123
+    # gethomepage.dev/widget.key: ${HOMEPAGE_HASS_KEY}
 spec:
   ingressClassName: external
   rules:

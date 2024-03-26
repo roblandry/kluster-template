@@ -5,6 +5,11 @@ metadata:
   name: docs
   annotations:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: docspell.png
+    gethomepage.dev/name: Docspell
+    gethomepage.dev/group: Office
+    gethomepage.dev/description: Document Management
 spec:
   ingressClassName: external
   rules:

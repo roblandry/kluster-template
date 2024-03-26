@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frigate
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: frigate.png
+    gethomepage.dev/name: Frigate
+    gethomepage.dev/group: NVR
+    gethomepage.dev/description: Frigate NVR
 spec:
   ingressClassName: internal
   rules:

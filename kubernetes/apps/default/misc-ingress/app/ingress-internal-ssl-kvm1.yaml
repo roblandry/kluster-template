@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: idrac.png
+    gethomepage.dev/name: Dell iDRAC
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: Dell iDRAC KVM-over-IP
 spec:
   ingressClassName: internal
   rules:

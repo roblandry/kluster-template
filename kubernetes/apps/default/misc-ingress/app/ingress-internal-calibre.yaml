@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: calibre
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: calibre.png
+    gethomepage.dev/name: Calibre
+    gethomepage.dev/group: Media Organization
+    gethomepage.dev/description: Calibre E-Book Management
 spec:
   ingressClassName: internal
   rules:

@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: unraid.png
+    gethomepage.dev/name: Unraid
+    gethomepage.dev/group: Storage
+    gethomepage.dev/description: Unraid NAS
 spec:
   ingressClassName: internal
   rules:

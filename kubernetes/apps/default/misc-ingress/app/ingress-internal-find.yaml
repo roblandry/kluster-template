@@ -3,6 +3,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: find
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: overseerr.png
+    gethomepage.dev/name: Overseerr
+    gethomepage.dev/group: Media
+    gethomepage.dev/description: Overseerr Media Request System
+    gethomepage.dev/widget.type: overseerr
+    gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:5055
+    gethomepage.dev/widget.key: ${HOMEPAGE_OVERSEERR_KEY}
 spec:
   ingressClassName: internal
   rules:

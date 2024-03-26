@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: apc
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: apc.png
+    gethomepage.dev/name: APC
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: APC UPS Daemon
 spec:
   ingressClassName: internal
   rules:

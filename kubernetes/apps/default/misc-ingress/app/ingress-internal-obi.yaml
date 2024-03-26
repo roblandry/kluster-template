@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: obi
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: obico.png
+    gethomepage.dev/name: Obico
+    gethomepage.dev/group: Other
+    gethomepage.dev/description: 3D Print Manager
 spec:
   ingressClassName: internal
   rules:

@@ -6,6 +6,11 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-ssl-verify: 'off'
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: asus.png
+    gethomepage.dev/name: Access Point 1
+    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/description: Asus Wireless Access Point
 spec:
   ingressClassName: internal
   rules:

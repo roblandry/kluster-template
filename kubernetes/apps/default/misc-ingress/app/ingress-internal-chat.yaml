@@ -3,6 +3,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: chat
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: openai.png
+    gethomepage.dev/name: Chat
+    gethomepage.dev/group: AI
+    gethomepage.dev/description: Chat with AI
 spec:
   ingressClassName: internal
   rules:
