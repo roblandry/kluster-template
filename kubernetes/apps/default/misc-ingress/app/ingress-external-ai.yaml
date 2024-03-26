@@ -7,6 +7,14 @@ metadata:
     external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
 spec:
   ingressClassName: external
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/icon: openai.png
+    gethomepage.dev/name: LocalAI
+    gethomepage.dev/group: AI
+    gethomepage.dev/description: Local AI
+    # gethomepage.dev/widget.type: prometheus
+    # gethomepage.dev/widget.url: http://kube-prometheus-stack-prometheus.observability.svc.cluster.local:9090
   rules:
     - host: &host "ai.${SECRET_DOMAIN}"
       http:

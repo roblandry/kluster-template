@@ -13,10 +13,13 @@ resources:
   - ./stakater.yaml
   # Added
   - ./backube.yaml
+  # - ./bitnami.yaml
   - ./csi-driver-nfs.yaml
   # - ./external-secrets.yaml
+  # - ./grafana.yaml
   - ./homepage.yaml
   - ./infisical.yaml
   # - ./longhorn.yaml
   - ./piraeus.yaml
+  # - ./prometheus-community.yaml
   - ./rook-ceph.yaml
