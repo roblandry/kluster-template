@@ -9,10 +9,10 @@ metadata:
     gethomepage.dev/name: PhotoPrism
     gethomepage.dev/group: Media
     gethomepage.dev/description: Photo Management
-    gethomepage.dev/widget.type: photoprism
-    gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:2342
-    gethomepage.dev/widget.username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
-    gethomepage.dev/widget.password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
+    # gethomepage.dev/widget.type: photoprism
+    # gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:2342
+    # gethomepage.dev/widget.username: ${HOMEPAGE_PHOTOPRISM_USERNAME}
+    # gethomepage.dev/widget.password: '${HOMEPAGE_PHOTOPRISM_PASSWORD}'
 spec:
   ingressClassName: internal
   rules:

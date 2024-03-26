@@ -9,7 +9,10 @@ metadata:
     gethomepage.dev/name: Calibre Web
     gethomepage.dev/group: Media Organization
     gethomepage.dev/description: Calibre Web E-Book Management
-
+    # gethomepage.dev/widget.type: calibreweb
+    # gethomepage.dev/widget.url: http://${SECRET_UNRAID_IP}:8073
+    # gethomepage.dev/widget.username: ${HOMEPAGE_CALIBREWEB_USERNAME}
+    # gethomepage.dev/widget.password: '${HOMEPAGE_CALIBREWEB_PASSWORD}'
 spec:
   ingressClassName: internal
   rules:
