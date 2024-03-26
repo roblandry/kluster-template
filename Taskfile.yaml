@@ -39,6 +39,8 @@ includes:
   user:
     taskfile: .taskfiles/User
     optional: true
+  bitwarden: .taskfiles/Bitwarden/Taskfile.yaml
+  external-secrets: .taskfiles/ExternalSecrets/Taskfile.yaml
 
 tasks:
 
