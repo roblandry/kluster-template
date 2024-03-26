@@ -245,7 +245,7 @@ data:
       #     description: Longhorn
   settings.yaml: |
     title: Homepage
-    favicon: heimdall.png
+    # favicon: heimdall.png
     theme: dark
     # background:
     #   image: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/moon.jpg
