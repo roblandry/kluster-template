@@ -23,7 +23,4 @@ Brewfile.lock.json
 wiki
 # Bootstrap
 /config.yaml
-# Longhorn auth
-auth
-/kubernetes/apps/external-secrets
 /.disabled
