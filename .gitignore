@@ -11,6 +11,7 @@ kubeconfig
 # Private
 .private
 .bin
+.env
 # Ansible
 .venv*
 # Taskfile
