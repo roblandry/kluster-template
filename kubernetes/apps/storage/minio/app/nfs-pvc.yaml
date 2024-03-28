@@ -3,6 +3,8 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: minio-nfs
+  annotations:
+    pv.kubernetes.io/provisioned-by: nfs.csi.k8s.io
 spec:
   capacity:
     storage: 1Mi
@@ -10,15 +12,22 @@ spec:
     - ReadWriteMany
   storageClassName: minio-nfs
   persistentVolumeReclaimPolicy: Retain
-  nfs:
-    server: "${SECRET_UNRAID_IP}"
-    path: ${SECRET_UNRAID_SHARE}/minio
+  # nfs:
+  #   server: "${SECRET_UNRAID_IP}"
+  #   path: ${SECRET_UNRAID_SHARE}/minio
   mountOptions:
     - nfsvers=4.2
     - nconnect=8
     - hard
     - noatime
-
+  csi:
+    driver: nfs.csi.k8s.io
+    # volumeHandle format: {nfs-server-address}#{sub-dir-name}#{share-name}
+    # make sure this value is unique for every share in the cluster
+    volumeHandle: ${SECRET_UNRAID_IP}#${SECRET_UNRAID_SHARE}#minio#
+    volumeAttributes:
+      server: ${SECRET_UNRAID_IP}
+      share: ${SECRET_UNRAID_SHARE}/minio
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
