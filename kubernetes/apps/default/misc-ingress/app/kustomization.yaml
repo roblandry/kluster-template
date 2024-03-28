@@ -22,7 +22,7 @@ resources:
   - ./ingress-internal-frigate.yaml
   - ./ingress-internal-kvm2.yaml
   - ./ingress-internal-log.yaml  # bad gateway
-  - ./ingress-internal-minio.yaml  # untested
+  # - ./ingress-internal-minio.yaml  # untested
   - ./ingress-internal-obi.yaml  # untested
   - ./ingress-internal-octo.yaml  # untested
   - ./ingress-internal-ombi.yaml
