@@ -42,11 +42,11 @@ spec:
               MINIO_PROMETHEUS_AUTH_TYPE: public
               MINIO_SERVER_URL: https://s3.${SECRET_DOMAIN}
               MINIO_UPDATE: "off"
-              MINIO_ROOT_USER: ${MINIO_ROOT_USER}
-              MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
-            # envFrom:
-            #   - secretRef:
-            #       name: *app
+              # MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+              # MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+            envFrom:
+              - secretRef:
+                  name: *app
             args:
               - server
               - /data
