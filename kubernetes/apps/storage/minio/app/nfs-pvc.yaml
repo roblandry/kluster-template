@@ -11,8 +11,8 @@ spec:
   storageClassName: minio-nfs
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: "${SECRET_NFS_HOST_0}"
-    path: /mnt/kubernetes/minio
+    server: "${SECRET_UNRAID_IP}"
+    path: ${SECRET_UNRAID_SHARE}/minio
   mountOptions:
     - nfsvers=4.2
     - nconnect=8
